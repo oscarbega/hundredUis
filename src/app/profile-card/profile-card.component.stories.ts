@@ -2,10 +2,9 @@ import {Meta,StoryObj} from "@storybook/angular"
 import { ProfileCardComponent } from "./profile-card.component";
 
 export default {
-    title: 'Components/carousels/GridActiveCarousel',
+    title: 'Challenge1ProfileCard',
     component: ProfileCardComponent,
     args:{
-        name
     },
     tags: ['autodocs'],
 } as Meta;
