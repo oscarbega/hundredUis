@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+.add-to-bag{
+    max-width: 60vw;
+    font-family: 'Merriweather';
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: repeat(2,1fr);
+    @media (max-width:1000px) {
+        grid-template-columns: repeat(1,1fr);
+    }
+    @media (max-width:600px) {
+        max-width: none;
+        
+    }
+
+    *{
+        margin: 0px;
+    }
+    &__galery{
+        display: flex;
+        padding: 10px 20px;
+        gap:20px;
+        &--column{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 20%;
+            div{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: all 0.4s;
+                width: 100%;
+                border-radius: 10px;
+                padding: 2px;
+                cursor: pointer;
+                &:hover{
+                    &:hover{
+                        filter: brightness(0.8);
+                        transform: scale(1.02);
+                    }
+                }
+                img{
+                    border-radius: calc(10px - 2px) ;
+                    width: 100%;
+                }
+            }
+            div.selected{
+                background-color: #1a76ff;
+            }
+        }
+        &--main{
+            img{
+                width: 100%;
+                height: 100%;
+            }
+            height: 100%;
+        }
+    }
+    .add-to-bag__description{
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        
+        button{
+            font-family: 'Merriweather';
+            width: 100% ;
+            border: none;
+            background-color: #1a76ff;
+            color: white;
+            padding: 10px;
+            border-radius: 3px;
+        }
+        &--header{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            
+            .brand{
+                color: #1a76ff;
+                text-transform: uppercase;
+                font-size: 12px;
+                font-weight: 600;
+            }
+            h2{
+                font-weight: 900;
+                font-size: 30px;
+            }
+            .description{
+                font-size: 12px;
+                color: #848484;
+            }
+        }
+        &--sizing{
+            div:has(button){
+                display: flex;
+                flex-direction: row;
+                gap: 3px;
+            }
+            button{
+                padding: 0px;
+                text-align: center;
+                font-size: 12px;
+                border-radius: 0px;
+                width: 40px;
+                height:40px;
+                font-weight: 700;
+                color: black;
+                background-color: transparent;
+            }
+            button.selected-size{
+                color: white;
+                background-color: black;
+            }
+            button:disabled{
+                opacity: 0.5;
+                background-image:linear-gradient(-45deg, transparent, transparent 48%, rgb(138, 138, 138) 48%, rgb(138, 138, 138) 52% ,transparent 52%, transparent);
+                background-repeat: no-repeat;
+                background-size: 40%;
+                background-position: 50%;
+            }
+            
+        }
+        &--pricing{
+            font-size: 30px;
+            font-weight: 800;
+            .main-price{
+                display: inline-flex;
+                align-items: center;
+            }
+            .discount{
+                background-color: #a9ccfe;
+                border-radius: 3px;
+                color: #1a76ff;
+                font-size: 12px;
+                font-weight: 700;
+                padding: 2px 3px;
+            }
+            .base-price{
+                font-weight: 500;
+                font-size: 12px;
+                color: #b0b0b0;
+                text-decoration: line-through;
+            }
+        }
+
+    }
+    button{
+        cursor: pointer;
+        transition: all 0.4s;
+        &:hover{
+            filter: brightness(0.8);
+        }
+    }
+}

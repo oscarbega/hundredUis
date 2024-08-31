@@ -1,0 +1,44 @@
+<head>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');</style>
+</head>
+<div class="add-to-bag">
+    <div class="add-to-bag__galery">
+        <div class="add-to-bag__galery--column">
+            @for(image of imagesUrls;track image;let i = $index){
+                <div [ngClass]="i==selectedPic ?'selected':''" (click)="onImagePick(i)">
+                    <img [src]="image" alt="">
+                </div>
+            }
+        </div>
+        <div class="add-to-bag__galery--main">
+            <img src="{{imagesUrls[selectedPic]}}" alt="">
+        </div>
+    </div>
+    <div class="add-to-bag__description">
+        <div class="add-to-bag__description--header">
+            <div class="brand">{{brand}}</div>
+            <div><h2>{{title}}</h2></div>
+            <div class="description">{{description}}</div>
+        </div>
+        <div class="add-to-bag__description--pricing">
+            <div class="main-price">{{(discount?price-price*(discount/100):price).toLocaleString("en-US",{style:"currency",currency:"USD"})}}&nbsp;
+                <span class="discount" *ngIf="discount">-{{discount}}%</span>
+            </div>
+            <div *ngIf="discount" class="base-price">
+                {{price.toLocaleString("en-US",{style:"currency",currency:"USD"})}}
+            </div>
+
+        </div>
+        <div class="add-to-bag__description--sizing">
+            <div>Choose size</div>
+            <div>
+                <button [ngClass]="isSizeSelected('s')?'selected-size':''" [disabled]="!isIncluded('s')" (click)="onSizeClicked('s')">S</button>
+                <button [ngClass]="isSizeSelected('m')?'selected-size':''" [disabled]="!isIncluded('m')" (click)="onSizeClicked('m')">M</button>
+                <button [ngClass]="isSizeSelected('l')?'selected-size':''" [disabled]="!isIncluded('l')" (click)="onSizeClicked('l')">L</button>
+                <button [ngClass]="isSizeSelected('xl')?'selected-size':''" [disabled]="!isIncluded('xl')" (click)="onSizeClicked('xl')">XL</button>
+                <button [ngClass]="isSizeSelected('xxl')?'selected-size':''" [disabled]="!isIncluded('xxl')" (click)="onSizeClicked('xxl')">XXL</button>
+            </div>
+        </div>
+        <button>ADD TO BAG</button>
+    </div>
+</div>
