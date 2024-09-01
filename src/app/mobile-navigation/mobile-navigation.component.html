@@ -1,0 +1,17 @@
+<div class="mobile-nav">
+    <router-outlet style="display: none;"></router-outlet>
+    <div class="mobile-nav--icons">
+        <button (click)="changeSelectedView(0)" routerLink="'no-page'">
+            <i class="bi bi-house" [ngClass]="selectedView==0?'selected':''" ></i>
+        </button>
+        <button (click)="changeSelectedView(1)">
+            <i class="bi bi-graph-up-arrow" [ngClass]="selectedView==1?'selected':''"></i>
+        </button>
+        <button (click)="changeSelectedView(2)">
+            <i class="bi bi-envelope" [ngClass]="selectedView==2?'selected':''"></i>
+        </button>
+        <button (click)="changeSelectedView(3)" routerLink="">
+            <i class="bi bi-person" [ngClass]="selectedView==3?'selected':''"></i>
+        </button>
+    </div>
+</div>

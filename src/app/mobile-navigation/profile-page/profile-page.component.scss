@@ -1,0 +1,82 @@
+// colors
+
+$blue-800:#09071c;
+$grey-200: #e8e9fd;
+$grey-100: #F6F7FF;
+$grey-alpha-400: #00000028;
+$blue-100: #859dd0;
+
+*{
+    font-family: 'Roboto';
+    color: $blue-800;
+    box-sizing: border-box;
+}
+hr{
+    width: 100%;
+    border: 1px solid #00000028;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+.profile-page{ padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    &__header{
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        &--pic{
+            width: 15vw;
+            height: auto;
+            border-radius: 15px;
+            overflow: hidden;
+            filter: drop-shadow(2px 2px 5px $grey-alpha-400);
+            img{
+                width: 100%;
+            }
+        }
+        &--text{
+            h1{
+                font-size: 12px;
+                font-weight: 800;
+            }
+            h2{
+                font-size: 12px;
+                font-weight: 500;
+            }
+        }
+    }
+    &__nav{
+        
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        &--item{
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            &--left{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 12px;
+                font-weight: 800;
+                &__icon{
+                    width: 5vh;
+                    height: 5vh;
+                    border-radius: 7px;
+                    background-color: $grey-200;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+            .bi-chevron-right{
+                font-size: 10px;
+                -webkit-text-stroke: 1px;
+            }
+        }
+    }
+}

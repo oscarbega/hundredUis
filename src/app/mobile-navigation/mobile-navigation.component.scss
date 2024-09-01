@@ -1,0 +1,50 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+// colors
+$grey-200: #dad9eb;
+$grey-100: #F6F7FF;
+$blue-100: #859dd0;
+
+@keyframes grow {
+    70% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+} 
+
+
+.mobile-nav{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    &--icons{
+        position: relative;
+        bottom: 0px;
+        display: flex;
+        left: 0px;
+        padding: 30px 15px;
+        width: 100%;
+        justify-content: space-between;
+        button{
+            background-color: transparent;
+            border: none;
+            width: 7vh;
+            height: 7vh;
+            border-radius: 100%;
+            i{
+                color: $grey-200;
+                font-size: 4vh;
+                display: block;
+                &.selected{
+                    color: $blue-100;
+                }
+            }
+            &:has(.selected){
+                background-color: $grey-100;
+                animation: grow 0.4s;
+            }
+        }
+    }
+}
+*{
+    box-sizing: border-box;
+}
