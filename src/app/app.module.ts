@@ -10,6 +10,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProfilePageComponent } from './mobile-navigation/profile-page/profile-page.component';
 import { NoPageComponent } from './mobile-navigation/no-page/no-page.component';
 import { RouterOutlet } from '@angular/router';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { RouterOutlet } from '@angular/router';
     AddToBagComponent,
     MobileNavigationComponent,
     ProfilePageComponent,
-    NoPageComponent
+    NoPageComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
