@@ -11,6 +11,7 @@ import { ProfilePageComponent } from './mobile-navigation/profile-page/profile-p
 import { NoPageComponent } from './mobile-navigation/no-page/no-page.component';
 import { RouterOutlet } from '@angular/router';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { RecipeComponent } from './recipe/recipe.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     MobileNavigationComponent,
     ProfilePageComponent,
     NoPageComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    RecipeComponent
   ],
   imports: [
     BrowserModule,

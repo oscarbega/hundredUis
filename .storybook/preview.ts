@@ -1,4 +1,5 @@
 import type { Preview } from "@storybook/angular";
+// .storybook/preview.js
 import { setCompodocJson } from "@storybook/addon-docs/angular";
 import docJson from "../documentation.json";
 setCompodocJson(docJson);
