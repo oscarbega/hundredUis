@@ -298,6 +298,256 @@
             "templateData": "<app-recipe></app-recipe>\r\n\r\n<router-outlet />\r\n"
         },
         {
+            "name": "CarouselComponent",
+            "id": "component-CarouselComponent-08a901dca8d86056c04d8342ea840b5ca7fd70bfb73814c3487fe0d7808650fcf99e6fdbc1040c5a0c5fd93a7f99d0aa21b22800aa0e76ec7217557e7f77245f",
+            "file": "src/app/carousel/carousel.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-carousel",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./carousel.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "images",
+                    "defaultValue": "[\"assets/images-carousel/img-1.jpeg\",\"assets/images-carousel/img-2.jpeg\",\"assets/images-carousel/img-3.jpeg\",\"assets/images-carousel/img-4.jpeg\",\"assets/images-carousel/img-5.jpg\",\"assets/images-carousel/img-6.jpg\",\"assets/images-carousel/img-7.webp\"]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "carousel",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "QueryList<ElementRef>",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "decorators": [
+                        {
+                            "name": "ViewChildren",
+                            "stringifiedArguments": "'carousel'"
+                        }
+                    ],
+                    "modifierKind": [
+                        170
+                    ]
+                },
+                {
+                    "name": "carouselContainer",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ElementRef",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'carouselContainer'"
+                        }
+                    ],
+                    "modifierKind": [
+                        170
+                    ]
+                },
+                {
+                    "name": "endX",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                },
+                {
+                    "name": "isDragging",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "selectedIndex",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "startX",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "goNext",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "goPrev",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "isOverEnd",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 64,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "isOverStar",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 49,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onMouseDown",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 29,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onMouseMove",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 33,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onMouseUp",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 41,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, ElementRef, Input, QueryList, ViewChild, ViewChildren} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-carousel',\r\n  templateUrl: './carousel.component.html',\r\n  styleUrl: './carousel.component.scss'\r\n})\r\nexport class CarouselComponent {\r\n  @ViewChildren('carousel')\r\n  carousel!:QueryList<ElementRef>;\r\n  @ViewChild('carouselContainer')\r\n  carouselContainer!:ElementRef;\r\n  @Input()\r\n  images: string[]=[\"assets/images-carousel/img-1.jpeg\",\"assets/images-carousel/img-2.jpeg\",\"assets/images-carousel/img-3.jpeg\",\"assets/images-carousel/img-4.jpeg\",\"assets/images-carousel/img-5.jpg\",\"assets/images-carousel/img-6.jpg\",\"assets/images-carousel/img-7.webp\"]\r\n  isDragging:boolean=false\r\n  startX:number = 0\r\n  endX:number=0\r\n\r\n  selectedIndex:number = 0;\r\n\r\n  goPrev(){\r\n    const index = (this.selectedIndex-1)%this.images.length\r\n    this.selectedIndex=index>=0?index:(this.images.length+index)\r\n  }\r\n  goNext(){\r\n    const index = (this.selectedIndex+1)%this.images.length\r\n    this.selectedIndex=index>=0?index:(this.images.length+index)\r\n  }\r\n  onMouseDown(event:MouseEvent){\r\n    this.isDragging=true\r\n    this.startX=event.clientX\r\n  }\r\n  onMouseMove(event:MouseEvent){\r\n    if(this.isDragging){\r\n      this.carousel.forEach((carousel: ElementRef) => {\r\n        const carouselElement = carousel.nativeElement;\r\n        carouselElement.style.transform = `translateX(${((event.clientX - this.startX) + this.endX)}px)`;\r\n      });\r\n    }\r\n  }\r\n  onMouseUp(event:MouseEvent){\r\n    this.isDragging=false\r\n    this.endX += (event.clientX - this.startX);\r\n    this.isOverStar();\r\n    this.isOverEnd();\r\n  }\r\n  \r\n\r\n  isOverStar(){\r\n    const firstElement = this.carousel.toArray()[0].nativeElement.getBoundingClientRect();\r\n    if (firstElement.x > 0) {\r\n      this.carousel.forEach(element => {\r\n        element.nativeElement.classList.add('bouncy-transition')\r\n        element.nativeElement.style.transform  = `translateX(0px)`\r\n      });\r\n      this.endX=0;\r\n      setTimeout(() => {\r\n        this.carousel.forEach((element: ElementRef) => {\r\n          element.nativeElement.classList.remove('bouncy-transition');\r\n        });\r\n      }, 500);\r\n    }\r\n  }\r\n  isOverEnd(){\r\n    const firstElement = this.carousel.toArray()[0].nativeElement.getBoundingClientRect();\r\n    const lastElement = this.carousel.toArray()[this.carousel.toArray().length - 1].nativeElement.getBoundingClientRect()\r\n    const containerWidth = this.carouselContainer.nativeElement.getBoundingClientRect().width\r\n    if (lastElement.x < containerWidth) {\r\n      this.carousel.forEach(element => {\r\n        element.nativeElement.classList.add('bouncy-transition')\r\n        const win = window\r\n        element.nativeElement.style.transform  = `translateX(${firstElement.x+(containerWidth - (lastElement.x+lastElement.width))}px)`\r\n        \r\n      });\r\n      this.endX=firstElement.x+(containerWidth - (lastElement.x+lastElement.width))\r\n      setTimeout(() => {\r\n        this.carousel.forEach((element: ElementRef) => {\r\n          element.nativeElement.classList.remove('bouncy-transition');\r\n        });\r\n      }, 500);\r\n    }\r\n  }\r\n}\r\n",
+            "styleUrl": "./carousel.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"h-screen flex flex-col\">\r\n    <div class=\"w-full h-4/6 grid grid-cols-12 \">\r\n        <div class=\"flex flex-col items-center justify-center \" (click)=\"goPrev()\">\r\n            <div>\r\n                <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 448 512\" class=\"h-7\"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d=\"M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z\"/></svg>\r\n            </div>\r\n        </div>\r\n        <div class=\"col-span-10 w-full h-full flex bg-cover transition-all\" [ngStyle]=\"{'background-image': 'url(\\''+images[selectedIndex]+'\\')'}\">\r\n        </div>\r\n        <div class=\"flex flex-col items-center justify-center relative\">\r\n            <div>\r\n                <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 448 512\" class=\"h-7\"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d=\"M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z\"/></svg>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"w-full flex h-2/6 gap-3 overflow-clip\" #carouselContainer >\r\n        @for (image of images; track $index) {\r\n            <div class=\"h-full py-3 pb-3 w-auto aspect-square min-w-40 min-h-40 movedTransition \" #carousel draggable=\"false\" (mousedown)=\"onMouseDown($event)\" (mousemove)=\"onMouseMove($event)\" (mouseup)=\"onMouseUp($event)\"  (click)=\"selectedIndex=$index\">\r\n                <img [src]=\"image\" alt=\"\" draggable=\"false\" class=\"object-cover w-full h-full hover:scale-110 transition-all\">\r\n            </div>\r\n        }\r\n    </div>\r\n</div>"
+        },
+        {
             "name": "ContactUsComponent",
             "id": "component-ContactUsComponent-43b38459b5c453f60f41caa9f054aefc3106fa06ae928171b1dc64552f66a118ff6bc7547c577e2ff99f41a9e535655bd2c9208ad2d23827304b0b18ac521199",
             "file": "src/app/contact-us/contact-us.component.ts",
@@ -625,19 +875,19 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"grid grid-cols-2 bg-blue-100\">\r\n    <img src=\"assets/Coconut-cream-coffee.webp\" >\r\n</div>"
+            "templateData": "<div class=\"flex flex-row  box-content relative\">\r\n    <img src=\"assets/Coconut-cream-coffee.webp\" class=\"w-2/5\">\r\n    <div class=\"flex flex-col w-3/5\">\r\n        <div class=\"flex flex-col p-10 gap-3 mt-60\">\r\n            <div class=\"flex flex-row w-auto gap-5\">\r\n                <div class=\"flex flex-row w-auto gap-2 items-center\">\r\n                    <div class=\"text-gray-500 h-full flex items-center\">\r\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-alarm\" viewBox=\"0 0 16 16\" class=\"h-5/6 w-auto\">\r\n                            <path d=\"M8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9z\"/>\r\n                            <path d=\"M6.5 0a.5.5 0 0 0 0 1H7v1.07a7.001 7.001 0 0 0-3.273 12.474l-.602.602a.5.5 0 0 0 .707.708l.746-.746A6.97 6.97 0 0 0 8 16a6.97 6.97 0 0 0 3.422-.892l.746.746a.5.5 0 0 0 .707-.708l-.601-.602A7.001 7.001 0 0 0 9 2.07V1h.5a.5.5 0 0 0 0-1zm1.038 3.018a6 6 0 0 1 .924 0 6 6 0 1 1-.924 0M0 3.5c0 .753.333 1.429.86 1.887A8.04 8.04 0 0 1 4.387 1.86 2.5 2.5 0 0 0 0 3.5M13.5 1c-.753 0-1.429.333-1.887.86a8.04 8.04 0 0 1 3.527 3.527A2.5 2.5 0 0 0 13.5 1\"/>\r\n                        </svg>\r\n                    </div>\r\n                    <div class=\"flex flex-col w-auto\">\r\n                        <div class=\"text-xs uppercase\">\r\n                            Total time\r\n                        </div>\r\n                        <div class=\"text-yellow-400 font-bold text-xs\">\r\n                            10 minutes\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"flex flex-row w-auto gap-2 items-center\">\r\n                    <div class=\"text-gray-500 h-full flex items-center\">\r\n                        <svg  xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-patch-check\" viewBox=\"0 0 16 16\" class=\"h-5/6 w-auto\">\r\n                            <path fill-rule=\"evenodd\" d=\"M10.354 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708 0\"/>\r\n                            <path d=\"m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911z\"/>\r\n                        </svg>\r\n                    </div>\r\n                    <div class=\"flex flex-col w-auto\">\r\n                        <div class=\"text-xs uppercase\">\r\n                            level\r\n                        </div>\r\n                        <div class=\"text-yellow-400 font-bold text-xs\">\r\n                            Easy\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"flex flex-row w-auto gap-2 items-center\">\r\n                    <div class=\"text-gray-500 h-full flex items-center\">\r\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-wallet2\" viewBox=\"0 0 16 16\" class=\"w-auto h-5/6\">\r\n                            <path d=\"M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5z\"/>\r\n                          </svg>\r\n                    </div>\r\n                    <div class=\"flex flex-col w-auto\">\r\n                        <div class=\"text-xs uppercase\">\r\n                            budget\r\n                        </div>\r\n                        <div class=\"text-yellow-400 font-bold text-xs\">\r\n                            Under $2\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <p class=\"italic max-w-xl\">\r\n                Sweet Iced Coffee with coconut milk is easy to make and stores well in the fridge. Make a large batch and save yourself a few trips to the coffee shop.\r\n            </p>\r\n        </div>\r\n\r\n        <div class=\"flex flex-col p-10 gap-6\">\r\n            <div class=\"flex flex-col gap-2\">\r\n                <h2 class=\"font-bold uppercase\">Ingredients</h2>\r\n                <div class=\"flex flex-col gap-2\">\r\n                    <div class=\"flex flex-row items-center gap-1\">\r\n                        <input type=\"checkbox\" id=\"customCheckbox\" class=\"accent-yellow-500 appearance-none relative w-4 h-4 border checked:bg-yellow-500 checked:border-yellow-500 checked:before:content-['\\2713'] checked:before:text-white checked:before:absolute checked:before:left-1/2 checked:before:top-1/2 checked:before:transform checked:before:-translate-x-1/2 checked:before:-translate-y-1/2\">\r\n                        <label for=\"\"> 3 tablespoons Espresso coffee powder</label>\r\n                    </div>\r\n                    <div class=\"flex flex-row items-center gap-1\">\r\n                        <input type=\"checkbox\" id=\"customCheckbox\" class=\"accent-yellow-500 appearance-none relative w-4 h-4 border checked:bg-yellow-500 checked:border-yellow-500 checked:before:content-['\\2713'] checked:before:text-white checked:before:absolute checked:before:left-1/2 checked:before:top-1/2 checked:before:transform checked:before:-translate-x-1/2 checked:before:-translate-y-1/2\">\r\n                        <label for=\"\"> 1 cup of boiling water</label>\r\n                    </div>\r\n                    <div class=\"flex flex-row items-center gap-1\">\r\n                        <input type=\"checkbox\" id=\"customCheckbox\" class=\"accent-yellow-500 appearance-none relative w-4 h-4 border checked:bg-yellow-500 checked:border-yellow-500 checked:before:content-['\\2713'] checked:before:text-white checked:before:absolute checked:before:left-1/2 checked:before:top-1/2 checked:before:transform checked:before:-translate-x-1/2 checked:before:-translate-y-1/2\">\r\n                        <label for=\"\"> 1 cup of coconut milk</label>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"flex flex-col gap-2\">\r\n                <h2 class=\"font-bold uppercase\">Instruction</h2>\r\n                <ol class=\"list-decimal box-border list-inside flex flex-col gap-2\">\r\n                    <li class=\"list-item\">Boil some water and let sit for 1-2 minutes</li>\r\n                    <li class=\"list-item\">Put the coffee grounds into a cafetiere and pour the water</li>\r\n                    <li class=\"list-item\"></li>\r\n                    <li class=\"list-item\"></li>\r\n                    <li class=\"list-item\"></li>\r\n                    <li class=\"list-item\"></li>\r\n                </ol>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n    <div class=\"absolute left-1/2 -translate-x-2/3 top-16 box-content bg-white p-3\">\r\n        <div class=\"flex items-center\">\r\n            <svg class=\"w-4 h-4 text-yellow-300 me-1\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"currentColor\" viewBox=\"0 0 22 20\">\r\n                <path d=\"M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z\"/>\r\n            </svg>\r\n            <svg class=\"w-4 h-4 text-yellow-300 me-1\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"currentColor\" viewBox=\"0 0 22 20\">\r\n                <path d=\"M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z\"/>\r\n            </svg>\r\n            <svg class=\"w-4 h-4 text-yellow-300 me-1\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"currentColor\" viewBox=\"0 0 22 20\">\r\n                <path d=\"M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z\"/>\r\n            </svg>\r\n            <svg class=\"w-4 h-4 text-yellow-300 me-1\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"currentColor\" viewBox=\"0 0 22 20\">\r\n                <path d=\"M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z\"/>\r\n            </svg>\r\n            <svg class=\"w-4 h-4 text-gray-300 me-1 dark:text-gray-500\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"currentColor\" viewBox=\"0 0 22 20\">\r\n                <path d=\"M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z\"/>\r\n            </svg>\r\n            <p class=\"ms-1 text-xs font-medium text-gray-500 dark:text-gray-400\">&nbsp;(365)</p>\r\n        </div>\r\n        <div class=\"font-bold text-6xl\">\r\n\r\n            Sweet iced Coffee with <br> Coconut Milk\r\n        </div>\r\n    </div>\r\n</div>"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-89b55bbeb5e7d71ff7d63450f31481f9e7cc3832b1e92143269500201e19a13b06bb3de09bbce55b746f3a2c622a9450816aedc25cf4cca8382a537f4ec23d83",
+            "id": "module-AppModule-87c72447344347d549afa51072ef0a83ecfcff04ce65243038bdf0a15ba4fa50af440901276459b20e3938c5c40d1d1424f000d6b91b439ead052caf90f16ae8",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { ProfileCardComponent } from './profile-card/profile-card.component';\r\nimport { AddToBagComponent } from './add-to-bag/add-to-bag.component';\r\nimport { MobileNavigationComponent } from './mobile-navigation/mobile-navigation.component';\r\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\r\nimport { ProfilePageComponent } from './mobile-navigation/profile-page/profile-page.component';\r\nimport { NoPageComponent } from './mobile-navigation/no-page/no-page.component';\r\nimport { RouterOutlet } from '@angular/router';\r\nimport { ContactUsComponent } from './contact-us/contact-us.component';\r\nimport { RecipeComponent } from './recipe/recipe.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    ProfileCardComponent,\r\n    AddToBagComponent,\r\n    MobileNavigationComponent,\r\n    ProfilePageComponent,\r\n    NoPageComponent,\r\n    ContactUsComponent,\r\n    RecipeComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    RouterOutlet,\r\n    FontAwesomeModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { ProfileCardComponent } from './profile-card/profile-card.component';\r\nimport { AddToBagComponent } from './add-to-bag/add-to-bag.component';\r\nimport { MobileNavigationComponent } from './mobile-navigation/mobile-navigation.component';\r\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\r\nimport { ProfilePageComponent } from './mobile-navigation/profile-page/profile-page.component';\r\nimport { NoPageComponent } from './mobile-navigation/no-page/no-page.component';\r\nimport { RouterOutlet } from '@angular/router';\r\nimport { ContactUsComponent } from './contact-us/contact-us.component';\r\nimport { RecipeComponent } from './recipe/recipe.component';\r\nimport { CarouselComponent } from './carousel/carousel.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    ProfileCardComponent,\r\n    AddToBagComponent,\r\n    MobileNavigationComponent,\r\n    ProfilePageComponent,\r\n    NoPageComponent,\r\n    ContactUsComponent,\r\n    RecipeComponent,\r\n    CarouselComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    RouterOutlet,\r\n    FontAwesomeModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -651,6 +901,9 @@
                         },
                         {
                             "name": "AppComponent"
+                        },
+                        {
+                            "name": "CarouselComponent"
                         },
                         {
                             "name": "ContactUsComponent"
@@ -773,6 +1026,15 @@
                 "name": "AppComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/carousel/carousel.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CarouselComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/15",
                 "status": "low"
             },
             {

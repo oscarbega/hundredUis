@@ -12,6 +12,7 @@ import { NoPageComponent } from './mobile-navigation/no-page/no-page.component';
 import { RouterOutlet } from '@angular/router';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { RecipeComponent } from './recipe/recipe.component';
+import { CarouselComponent } from './carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RecipeComponent } from './recipe/recipe.component';
     ProfilePageComponent,
     NoPageComponent,
     ContactUsComponent,
-    RecipeComponent
+    RecipeComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
