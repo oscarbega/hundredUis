@@ -1,0 +1,14 @@
+.input{ 
+}
+.input{
+    @apply relative;
+    label{
+        @apply text-xs absolute top-1 left-3 text-gray-500 font-semibold z-10;
+    }
+    input{
+        @apply h-12 bg-indigo-100 rounded-lg relative px-3 pb-1 pt-4 flex w-full font-bold transition-all placeholder:text-black focus:outline-none focus:bg-white focus:ring-2 ring-blue-400;
+    }
+    svg{
+        @apply absolute right-3 z-10 w-auto h-auto top-1/2 -translate-y-1/2 text-gray-500;
+    }
+}

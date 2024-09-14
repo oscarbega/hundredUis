@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {ReactiveFormsModule} from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { RouterOutlet } from '@angular/router';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +26,15 @@ import { CarouselComponent } from './carousel/carousel.component';
     NoPageComponent,
     ContactUsComponent,
     RecipeComponent,
-    CarouselComponent
+    CarouselComponent,
+    CreateAccountComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterOutlet,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

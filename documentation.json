@@ -299,7 +299,7 @@
         },
         {
             "name": "CarouselComponent",
-            "id": "component-CarouselComponent-08a901dca8d86056c04d8342ea840b5ca7fd70bfb73814c3487fe0d7808650fcf99e6fdbc1040c5a0c5fd93a7f99d0aa21b22800aa0e76ec7217557e7f77245f",
+            "id": "component-CarouselComponent-0cb5f2569ee74db5740d816880e9e75ee8af6aeba564e10bffc4b4d44b5e4e6721b53bca24ac19712932f5c6d7db3c24ee935b71663e58f9476a8c6593a0bfbe",
             "file": "src/app/carousel/carousel.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -539,13 +539,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, ElementRef, Input, QueryList, ViewChild, ViewChildren} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-carousel',\r\n  templateUrl: './carousel.component.html',\r\n  styleUrl: './carousel.component.scss'\r\n})\r\nexport class CarouselComponent {\r\n  @ViewChildren('carousel')\r\n  carousel!:QueryList<ElementRef>;\r\n  @ViewChild('carouselContainer')\r\n  carouselContainer!:ElementRef;\r\n  @Input()\r\n  images: string[]=[\"assets/images-carousel/img-1.jpeg\",\"assets/images-carousel/img-2.jpeg\",\"assets/images-carousel/img-3.jpeg\",\"assets/images-carousel/img-4.jpeg\",\"assets/images-carousel/img-5.jpg\",\"assets/images-carousel/img-6.jpg\",\"assets/images-carousel/img-7.webp\"]\r\n  isDragging:boolean=false\r\n  startX:number = 0\r\n  endX:number=0\r\n\r\n  selectedIndex:number = 0;\r\n\r\n  goPrev(){\r\n    const index = (this.selectedIndex-1)%this.images.length\r\n    this.selectedIndex=index>=0?index:(this.images.length+index)\r\n  }\r\n  goNext(){\r\n    const index = (this.selectedIndex+1)%this.images.length\r\n    this.selectedIndex=index>=0?index:(this.images.length+index)\r\n  }\r\n  onMouseDown(event:MouseEvent){\r\n    this.isDragging=true\r\n    this.startX=event.clientX\r\n  }\r\n  onMouseMove(event:MouseEvent){\r\n    if(this.isDragging){\r\n      this.carousel.forEach((carousel: ElementRef) => {\r\n        const carouselElement = carousel.nativeElement;\r\n        carouselElement.style.transform = `translateX(${((event.clientX - this.startX) + this.endX)}px)`;\r\n      });\r\n    }\r\n  }\r\n  onMouseUp(event:MouseEvent){\r\n    this.isDragging=false\r\n    this.endX += (event.clientX - this.startX);\r\n    this.isOverStar();\r\n    this.isOverEnd();\r\n  }\r\n  \r\n\r\n  isOverStar(){\r\n    const firstElement = this.carousel.toArray()[0].nativeElement.getBoundingClientRect();\r\n    if (firstElement.x > 0) {\r\n      this.carousel.forEach(element => {\r\n        element.nativeElement.classList.add('bouncy-transition')\r\n        element.nativeElement.style.transform  = `translateX(0px)`\r\n      });\r\n      this.endX=0;\r\n      setTimeout(() => {\r\n        this.carousel.forEach((element: ElementRef) => {\r\n          element.nativeElement.classList.remove('bouncy-transition');\r\n        });\r\n      }, 500);\r\n    }\r\n  }\r\n  isOverEnd(){\r\n    const firstElement = this.carousel.toArray()[0].nativeElement.getBoundingClientRect();\r\n    const lastElement = this.carousel.toArray()[this.carousel.toArray().length - 1].nativeElement.getBoundingClientRect()\r\n    const containerWidth = this.carouselContainer.nativeElement.getBoundingClientRect().width\r\n    if (lastElement.x < containerWidth) {\r\n      this.carousel.forEach(element => {\r\n        element.nativeElement.classList.add('bouncy-transition')\r\n        const win = window\r\n        element.nativeElement.style.transform  = `translateX(${firstElement.x+(containerWidth - (lastElement.x+lastElement.width))}px)`\r\n        \r\n      });\r\n      this.endX=firstElement.x+(containerWidth - (lastElement.x+lastElement.width))\r\n      setTimeout(() => {\r\n        this.carousel.forEach((element: ElementRef) => {\r\n          element.nativeElement.classList.remove('bouncy-transition');\r\n        });\r\n      }, 500);\r\n    }\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, ElementRef, Input, QueryList, ViewChild, ViewChildren} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-carousel',\r\n  templateUrl: './carousel.component.html',\r\n  styleUrl: './carousel.component.scss'\r\n})\r\nexport class CarouselComponent {\r\n  @ViewChildren('carousel')\r\n  carousel!:QueryList<ElementRef>;\r\n  @ViewChild('carouselContainer')\r\n  carouselContainer!:ElementRef;\r\n  @Input()\r\n  images: string[]=[\"assets/images-carousel/img-1.jpeg\",\"assets/images-carousel/img-2.jpeg\",\"assets/images-carousel/img-3.jpeg\",\"assets/images-carousel/img-4.jpeg\",\"assets/images-carousel/img-5.jpg\",\"assets/images-carousel/img-6.jpg\",\"assets/images-carousel/img-7.webp\"]\r\n  isDragging:boolean=false\r\n  startX:number = 0\r\n  endX:number=0\r\n\r\n  selectedIndex:number = 0;\r\n\r\n  goPrev(){\r\n    const index = (this.selectedIndex-1)%this.images.length\r\n    this.selectedIndex=index>=0?index:(this.images.length+index)\r\n  }\r\n  goNext(){\r\n    const index = (this.selectedIndex+1)%this.images.length\r\n    this.selectedIndex=index\r\n  }\r\n  onMouseDown(event:MouseEvent){\r\n    this.isDragging=true\r\n    this.startX=event.clientX\r\n  }\r\n  onMouseMove(event:MouseEvent){\r\n    if(this.isDragging){\r\n      this.carousel.forEach((carousel: ElementRef) => {\r\n        const carouselElement = carousel.nativeElement;\r\n        carouselElement.style.transform = `translateX(${((event.clientX - this.startX) + this.endX)}px)`;\r\n      });\r\n    }\r\n  }\r\n  onMouseUp(event:MouseEvent){\r\n    this.isDragging=false\r\n    this.endX += (event.clientX - this.startX);\r\n    this.isOverStar();\r\n    this.isOverEnd();\r\n  }\r\n  \r\n\r\n  isOverStar(){\r\n    const firstElement = this.carousel.toArray()[0].nativeElement.getBoundingClientRect();\r\n    if (firstElement.x > 0) {\r\n      this.carousel.forEach(element => {\r\n        element.nativeElement.classList.add('bouncy-transition')\r\n        element.nativeElement.style.transform  = `translateX(0px)`\r\n      });\r\n      this.endX=0;\r\n      setTimeout(() => {\r\n        this.carousel.forEach((element: ElementRef) => {\r\n          element.nativeElement.classList.remove('bouncy-transition');\r\n        });\r\n      }, 500);\r\n    }\r\n  }\r\n  isOverEnd(){\r\n    const firstElement = this.carousel.toArray()[0].nativeElement.getBoundingClientRect();\r\n    const lastElement = this.carousel.toArray()[this.carousel.toArray().length - 1].nativeElement.getBoundingClientRect()\r\n    const containerWidth = this.carouselContainer.nativeElement.getBoundingClientRect().width\r\n    if (lastElement.x < containerWidth) {\r\n      this.carousel.forEach(element => {\r\n        element.nativeElement.classList.add('bouncy-transition')\r\n        const win = window\r\n        element.nativeElement.style.transform  = `translateX(${firstElement.x+(containerWidth - (lastElement.x+lastElement.width))}px)`\r\n        \r\n      });\r\n      this.endX=firstElement.x+(containerWidth - (lastElement.x+lastElement.width))\r\n      setTimeout(() => {\r\n        this.carousel.forEach((element: ElementRef) => {\r\n          element.nativeElement.classList.remove('bouncy-transition');\r\n        });\r\n      }, 500);\r\n    }\r\n  }\r\n}\r\n",
             "styleUrl": "./carousel.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"h-screen flex flex-col\">\r\n    <div class=\"w-full h-4/6 grid grid-cols-12 \">\r\n        <div class=\"flex flex-col items-center justify-center \" (click)=\"goPrev()\">\r\n            <div>\r\n                <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 448 512\" class=\"h-7\"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d=\"M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z\"/></svg>\r\n            </div>\r\n        </div>\r\n        <div class=\"col-span-10 w-full h-full flex bg-cover transition-all\" [ngStyle]=\"{'background-image': 'url(\\''+images[selectedIndex]+'\\')'}\">\r\n        </div>\r\n        <div class=\"flex flex-col items-center justify-center relative\">\r\n            <div>\r\n                <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 448 512\" class=\"h-7\"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d=\"M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z\"/></svg>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"w-full flex h-2/6 gap-3 overflow-clip\" #carouselContainer >\r\n        @for (image of images; track $index) {\r\n            <div class=\"h-full py-3 pb-3 w-auto aspect-square min-w-40 min-h-40 movedTransition \" #carousel draggable=\"false\" (mousedown)=\"onMouseDown($event)\" (mousemove)=\"onMouseMove($event)\" (mouseup)=\"onMouseUp($event)\"  (click)=\"selectedIndex=$index\">\r\n                <img [src]=\"image\" alt=\"\" draggable=\"false\" class=\"object-cover w-full h-full hover:scale-110 transition-all\">\r\n            </div>\r\n        }\r\n    </div>\r\n</div>"
+            "templateData": "<div class=\"h-screen bg-slate-950 flex flex-col text-gray-200\">\r\n    <div class=\"w-full h-4/6 grid grid-cols-12 \">\r\n        <div class=\"flex flex-col items-center justify-center \" (click)=\"goPrev()\">\r\n            <div>\r\n                <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 448 512\" class=\"h-7\"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d=\"M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z\"/></svg>\r\n            </div>\r\n        </div>\r\n        <div class=\"col-span-10 w-full h-full flex bg-cover transition-all\" [ngStyle]=\"{'background-image': 'url(\\''+images[selectedIndex]+'\\')'}\">\r\n        </div>\r\n        <div class=\"flex flex-col items-center justify-center relative\" (click)=\"goNext()\">\r\n            <div>\r\n                <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 448 512\" class=\"h-7\"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d=\"M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z\"/></svg>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"w-full flex h-2/6 gap-3 overflow-clip\" #carouselContainer  >\r\n        @for (image of images; track $index) {\r\n            <div class=\"h-full py-3 pb-3 w-auto aspect-square min-w-40 min-h-40 movedTransition \" #carousel draggable=\"false\" (mousedown)=\"onMouseDown($event)\" (mousemove)=\"onMouseMove($event)\" (mouseup)=\"onMouseUp($event)\"  (click)=\"selectedIndex=$index\">\r\n                <img [src]=\"image\" alt=\"\" draggable=\"false\" class=\"object-cover w-full h-full hover:scale-110 transition-all\">\r\n            </div>\r\n        }\r\n    </div>\r\n</div>"
         },
         {
             "name": "ContactUsComponent",
@@ -584,6 +584,101 @@
             "stylesData": "",
             "extends": [],
             "templateData": "<head>\r\n    <style>\r\n        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');\r\n        </style>\r\n</head>\r\n<div class=\"contact-us\">\r\n    <div class=\"contact-us__map\">\r\n        <svg\r\n        width=\"1920\"\r\n        height=\"1080\"\r\n        viewBox=\"0 0 1920 1080\"\r\n        version=\"1.1\"\r\n        id=\"svg5\"\r\n        xmlns:xlink=\"http://www.w3.org/1999/xlink\"\r\n        xmlns=\"http://www.w3.org/2000/svg\"\r\n        xmlns:svg=\"http://www.w3.org/2000/svg\">\r\n       <defs\r\n          id=\"defs2\">\r\n         <linearGradient\r\n            id=\"linearGradient2012\">\r\n           <stop\r\n              style=\"stop-color:#333333;stop-opacity:0.52895755;\"\r\n              offset=\"0.45373136\"\r\n              id=\"stop2008\" />\r\n           <stop\r\n              style=\"stop-color:#333333;stop-opacity:0;\"\r\n              offset=\"1\"\r\n              id=\"stop2010\" />\r\n         </linearGradient>\r\n         <linearGradient\r\n            id=\"linearGradient1147\">\r\n           <stop\r\n              style=\"stop-color:#939393;stop-opacity:1;\"\r\n              offset=\"0\"\r\n              id=\"stop1143\" />\r\n           <stop\r\n              style=\"stop-color:#333333;stop-opacity:0;\"\r\n              offset=\"1\"\r\n              id=\"stop1145\" />\r\n         </linearGradient>\r\n         <linearGradient\r\n            xlink:href=\"#linearGradient1147\"\r\n            id=\"linearGradient1877\"\r\n            x1=\"30.27132\"\r\n            y1=\"571.98755\"\r\n            x2=\"1113.1595\"\r\n            y2=\"571.98755\"\r\n            gradientUnits=\"userSpaceOnUse\" />\r\n         <radialGradient\r\n            xlink:href=\"#linearGradient2012\"\r\n            id=\"radialGradient2006\"\r\n            cx=\"275.89124\"\r\n            cy=\"994.82068\"\r\n            fx=\"275.89124\"\r\n            fy=\"994.82068\"\r\n            r=\"541.44415\"\r\n            gradientTransform=\"matrix(1.728604,-0.13297016,0.09342252,1.2144873,-293.95412,-227.06436)\"\r\n            gradientUnits=\"userSpaceOnUse\" />\r\n       </defs>\r\n       <g\r\n          id=\"layer1\"\r\n          style=\"stroke:url(#linearGradient1877);stroke-width:7.3;stroke-dasharray:none\"\r\n          transform=\"translate(-33.743409,32.2671)\">\r\n         <path\r\n            id=\"path342\"\r\n            style=\"fill:none;fill-opacity:0.988235;stroke:url(#radialGradient2006);stroke-width:7.3;stroke-dasharray:none\"\r\n            d=\"m 451.51519,333.67001 -212.31675,41.74476 m 562.50407,-9.1608 -29.62302,55.42393 m -117.38677,-31.46506 147.00979,-23.95887 87.43633,60.93373 -42.10196,50.01617 m -382.04012,-101.7891 -36.7044,-113.65264 54.2384,-126.78849 m 86.06008,729.41366 42.54295,101.09601 H 792.20758 M 611.13379,770.82894 735.60633,737.2935 M 578.69947,704.42025 643.56812,837.23763 M 439.77422,737.2935 501.08963,890.61156 M 280.83128,827.4716 278.38313,754.1652 215.62433,686.26213 M 352.61863,827.4716 H 231.14236 l -22.09843,126.27992 m 770.0988,-10.34125 -29.26575,22.07304 m 107.12962,-36.12877 -50.0726,46.26834 m -65.64936,-76.09358 104.98486,121.687 64.4225,-59.10755 m -288.56772,-69.96276 119.16036,7.38331 29.82524,-46.52738 0.99547,-55.42071 m -226.376,-132.83604 57.3638,114.72759 35.59266,210.72528 M 546.39844,422.32543 333.15001,452.74718 m 266.79748,161.67225 -53.54905,-192.094 108.29428,-32.11259 m 64.23814,193.71814 -237.96674,60.9769 m -161.9696,72.09823 160.16189,-30.74398 3.37435,-77.19359 -48.92795,-28.6819 -38.80492,49.88737 -42.17926,-26.26698 -27.29808,-199.24795 m 312.42989,-65.63781 107.97891,325.6239 M 218.5624,427.1877 637.75044,339.12127 559.29701,96.168717 M 105.16214,630.27401 261.32861,550.59877 M 129.20042,704.42025 302.04825,668.10401 M 148.99933,962.10875 153.53251,779.47276 33.743409,409.98243 M 333.15001,757.8548 745.72935,664.74517 889.13884,524.71002 M 1039.297,804.78032 803.09315,779.47276 392.20097,928.25902 79.297012,971.81019 M 138.34798,195.71178 433.60281,1047.7329\" />\r\n       </g>\r\n       <g\r\n          id=\"circle\"\r\n          style=\"stroke-width:0;stroke-dasharray:none\"\r\n          transform=\"matrix(0.45138889,0,0,0.45138889,201.47779,317.44001)\">\r\n         <circle\r\n            style=\"fill:#fe007a;fill-opacity:1;stroke:#333333;stroke-width:0;stroke-dasharray:none\"\r\n            id=\"path4418\"\r\n            cx=\"442.56665\"\r\n            cy=\"662.38275\"\r\n            r=\"21.474174\" />\r\n         <circle\r\n            style=\"fill:#fe007a;fill-opacity:0.44787642;stroke:#333333;stroke-width:0;stroke-dasharray:none\"\r\n            id=\"path4418-9\"\r\n            cx=\"442.56665\"\r\n            cy=\"662.38275\"\r\n            r=\"36.65871\" />\r\n         <circle\r\n            style=\"fill:#fe007a;fill-opacity:0.19305019;stroke:#333333;stroke-width:0;stroke-dasharray:none\"\r\n            id=\"path4418-9-0\"\r\n            cx=\"442.56665\"\r\n            cy=\"662.38275\"\r\n            r=\"51.843246\" />\r\n       </g>\r\n     </svg>\r\n    </div>\r\n    <div class=\"contact-us__content--container\">\r\n        <div class=\"contact-us__content\">\r\n            <h1>Contact Us</h1>\r\n            <p>Get in touch with us! Whether you have questions, feedback, or just want to say hello, we're here for you.\r\n            </p>\r\n            <div class=\"float\">\r\n               <p>\r\n                  Windler, Lockman and McClure\r\n               </p>\r\n               <p>\r\n                  3629 N Cole Rd, Boise, Illinois\r\n               </p>\r\n               <div class=\"pointer\">\r\n\r\n               </div>\r\n             </div>\r\n        </div>\r\n        <div class=\"contact-us__form\">\r\n            <form action=\"submit\">\r\n               <div class=\"form-content\">\r\n                  <p>\r\n                      Send us a message\r\n                  </p>\r\n                      <div>\r\n                          <input type=\"text\" placeholder=\"Name\">\r\n                          <input type=\"email\" placeholder=\"Email\">\r\n                          <input type=\"text\" placeholder=\"Phone\">\r\n                          <label for=\"\">Preferreed contact method for comunication</label>\r\n                          <div class=\"radio-group\">\r\n                              <label> <input type=\"radio\" name=\"contact\" id=\"\"> Email</label>\r\n                              <label> <input type=\"radio\" name=\"contact\" id=\"\"> Phone</label>\r\n                          </div>\r\n                          <textarea placeholder=\"Message\" resize=\"none\"></textarea>\r\n                      </div>\r\n\r\n               </div>\r\n            <button type=\"submit\">Submit</button>\r\n            </form>\r\n        </div>\r\n    </div>\r\n    \r\n</div>"
+        },
+        {
+            "name": "CreateAccountComponent",
+            "id": "component-CreateAccountComponent-ee2f5d7aa9a0a8cac54fbea1eec48b3e8dd1a9a711af7ca00a76846ac66e0d4d1405760804ec77e328c1d0b8fc32587b9a034cc1e6687c675f3ea3f99d1fad4b",
+            "file": "src/app/create-account/create-account.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-create-account",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./create-account.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "accountForm",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FormGroup",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "showPassword",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onSubmit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 23,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-create-account',\r\n  templateUrl: './create-account.component.html',\r\n  styleUrl: './create-account.component.scss'\r\n})\r\nexport class CreateAccountComponent {\r\n  showPassword=false;\r\n  accountForm: FormGroup\r\n  constructor(\r\n    private fb: FormBuilder\r\n  ) {\r\n    this.accountForm = this.fb.group({\r\n      firstName:['',Validators.required],\r\n      lastName:['',Validators.required],\r\n      email:['',Validators.required,Validators.email],\r\n      password:['',Validators.required],\r\n    })\r\n  }\r\n\r\n  onSubmit(){\r\n    console.log(this.accountForm.status);\r\n  }\r\n\r\n}\r\n",
+            "styleUrl": "./create-account.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "fb",
+                        "type": "FormBuilder",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 11,
+                "jsdoctags": [
+                    {
+                        "name": "fb",
+                        "type": "FormBuilder",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "templateData": "<div class=\"h-screen w-screen relative flex box-border p-40\">\r\n    <div class=\"absolute h-screen right-0 top-0\">\r\n        <img src=\"assets/bg-create-account.png\" class=\"h-screen\">\r\n    </div>\r\n    <div class=\"z-10 w-full max-w-xl flex flex-col gap-10\">\r\n        <header>\r\n            <div class=\"uppercase text-gray-400 font-bold\">Start for free</div>\r\n            <h1 class=\"text-5xl font-bold\">Create new account</h1>\r\n        </header>\r\n        <form class=\"grid grid-cols-1 lg:grid-cols-2  gap-4 w-full \" [formGroup]=\"accountForm\" (ngSubmit)=\"onSubmit()\" >\r\n            <div class=\"input\">\r\n                <label for=\"\" class=\"\">First name</label>   \r\n                <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"14\" width=\"14\" viewBox=\"0 0 576 512\" fill=\"rgb(107 114 128 / var(--tw-text-opacity))\"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d=\"M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l448 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zm80 256l64 0c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16L80 384c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm-32-96a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zm256-32l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z\"/></svg>    \r\n                <input type=\"text\" placeholder=\"John\" formControlName=\"firstName\" >\r\n            </div>\r\n            <div class=\"input\">\r\n                <label for=\"\" class=\"\">Last name</label>   \r\n                <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"14\" width=\"14\" viewBox=\"0 0 576 512\" fill=\"rgb(107 114 128 / var(--tw-text-opacity))\"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d=\"M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l448 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zm80 256l64 0c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16L80 384c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm-32-96a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zm256-32l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z\"/></svg>    \r\n                <input type=\"text\" placeholder=\"Doe\" formControlName=\"lastName\" >\r\n            </div>\r\n            <div class=\"input lg:col-span-2\">\r\n                <label for=\"\" class=\"\">Email</label>\r\n                <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"14\" width=\"14\" viewBox=\"0 0 512 512\" fill=\"rgb(107 114 128 / var(--tw-text-opacity))\"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d=\"M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z\"/></svg>\r\n                <input type=\"text\" placeholder=\"john.doe@email.com\" formArrayName=\"email\" >\r\n            </div>\r\n            <div class=\"input lg:col-span-2\">\r\n                <label for=\"\" class=\"\">Password</label>\r\n                <svg (click)=\"showPassword=!showPassword\" xmlns=\"http://www.w3.org/2000/svg\" height=\"14\" width=\"14\" viewBox=\"0 0 576 512\" fill=\"rgb(107 114 128 / var(--tw-text-opacity))\"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d=\"M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z\"/></svg>\r\n                <input type=\"text\" placeholder=\"&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;\" [type]=\"showPassword?'text':'password'\" formArrayName=\"password\">\r\n            </div>\r\n            <div class=\"input lg:col-span-2 font-bold text-gray-400 mix-blend-difference\">\r\n                Already have an account? <a href=\"#\" class=\"text-blue-500\">Sign In</a>\r\n            </div>\r\n            <button  class=\"mt-4 bg-blue-500 rounded-full shadow-md shadow-indigo-400 text-white font-semibold w-full py-3 text-xs lg:col-span-2\">Create account</button>\r\n        </form>\r\n    </div>\r\n\r\n\r\n</div>\r\n"
         },
         {
             "name": "MobileNavigationComponent",
@@ -881,13 +976,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-87c72447344347d549afa51072ef0a83ecfcff04ce65243038bdf0a15ba4fa50af440901276459b20e3938c5c40d1d1424f000d6b91b439ead052caf90f16ae8",
+            "id": "module-AppModule-81ce39950b0f8a8e5b5a52943d4616175e51f63c40386bf5006a6a015fef9a1fa38eb423e43342fdfb2d2c0e8b093098dfcbfb621be9696caab8744a5025a341",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { ProfileCardComponent } from './profile-card/profile-card.component';\r\nimport { AddToBagComponent } from './add-to-bag/add-to-bag.component';\r\nimport { MobileNavigationComponent } from './mobile-navigation/mobile-navigation.component';\r\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\r\nimport { ProfilePageComponent } from './mobile-navigation/profile-page/profile-page.component';\r\nimport { NoPageComponent } from './mobile-navigation/no-page/no-page.component';\r\nimport { RouterOutlet } from '@angular/router';\r\nimport { ContactUsComponent } from './contact-us/contact-us.component';\r\nimport { RecipeComponent } from './recipe/recipe.component';\r\nimport { CarouselComponent } from './carousel/carousel.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    ProfileCardComponent,\r\n    AddToBagComponent,\r\n    MobileNavigationComponent,\r\n    ProfilePageComponent,\r\n    NoPageComponent,\r\n    ContactUsComponent,\r\n    RecipeComponent,\r\n    CarouselComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    RouterOutlet,\r\n    FontAwesomeModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport {ReactiveFormsModule} from '@angular/forms'\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { ProfileCardComponent } from './profile-card/profile-card.component';\r\nimport { AddToBagComponent } from './add-to-bag/add-to-bag.component';\r\nimport { MobileNavigationComponent } from './mobile-navigation/mobile-navigation.component';\r\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\r\nimport { ProfilePageComponent } from './mobile-navigation/profile-page/profile-page.component';\r\nimport { NoPageComponent } from './mobile-navigation/no-page/no-page.component';\r\nimport { RouterOutlet } from '@angular/router';\r\nimport { ContactUsComponent } from './contact-us/contact-us.component';\r\nimport { RecipeComponent } from './recipe/recipe.component';\r\nimport { CarouselComponent } from './carousel/carousel.component';\r\nimport { CreateAccountComponent } from './create-account/create-account.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    ProfileCardComponent,\r\n    AddToBagComponent,\r\n    MobileNavigationComponent,\r\n    ProfilePageComponent,\r\n    NoPageComponent,\r\n    ContactUsComponent,\r\n    RecipeComponent,\r\n    CarouselComponent,\r\n    CreateAccountComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    RouterOutlet,\r\n    FontAwesomeModule,\r\n    ReactiveFormsModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -907,6 +1002,9 @@
                         },
                         {
                             "name": "ContactUsComponent"
+                        },
+                        {
+                            "name": "CreateAccountComponent"
                         },
                         {
                             "name": "MobileNavigationComponent"
@@ -1044,6 +1142,15 @@
                 "name": "ContactUsComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/create-account/create-account.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CreateAccountComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
