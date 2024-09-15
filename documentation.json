@@ -1,6 +1,76 @@
 {
     "pipes": [],
-    "interfaces": [],
+    "interfaces": [
+        {
+            "name": "EventCard",
+            "id": "interface-EventCard-eefe1ee43c214695a63323f1e3209672c4df6180008d6e9f1249b7c208b5c1282b93261ed9b33f0b583f76822a8b002188cd705b178d9422312ab2b5f7c4fbbf",
+            "file": "src/app/music-events/event-card/event-card.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\nexport interface EventCard{\r\n  title:string;\r\n  description:string;\r\n  isSoldOut: boolean;\r\n  date: Date;\r\n  time: string;\r\n  color: string;\r\n}\r\n\r\n@Component({\r\n  selector: 'app-event-card',\r\n  templateUrl: './event-card.component.html',\r\n  styleUrl: './event-card.component.scss'\r\n})\r\nexport class EventCardComponent {\r\n  @Input()\r\n  cardInfo: EventCard = {\r\n    title: 'Swiftogeddon - the taylor swift club night',\r\n    description: 'Swiftogeddon is a night dedicated to worshipping at the altar of Taylor Swift: non-stop Swifty all night: deep cuts,fan favourites uhsiaouilda ujeafhwe sifhewhiu ouiwaHF WOIEHF',\r\n    isSoldOut: false,\r\n    date: new Date('04/24/2025'),\r\n    time: '21:00',\r\n    color: 'bg-red-100'\r\n  }\r\n  isToday(date: Date): boolean {\r\n    const today = new Date();\r\n  \r\n    // Compare year, month, and day\r\n    return (\r\n      date.getFullYear() === today.getFullYear() &&\r\n      date.getMonth() === today.getMonth() &&\r\n      date.getDate() === today.getDate()\r\n    );\r\n  }\r\n\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "color",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "date",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Date",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "description",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "isSoldOut",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "time",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        }
+    ],
     "injectables": [],
     "guards": [],
     "interceptors": [],
@@ -587,7 +657,7 @@
         },
         {
             "name": "CreateAccountComponent",
-            "id": "component-CreateAccountComponent-ee2f5d7aa9a0a8cac54fbea1eec48b3e8dd1a9a711af7ca00a76846ac66e0d4d1405760804ec77e328c1d0b8fc32587b9a034cc1e6687c675f3ea3f99d1fad4b",
+            "id": "component-CreateAccountComponent-cb1615c9dc8d385265948d46100d365ee765a3c4b157fbec78f85cbccba025218f88766f0045e73fba941b1b1c1baef66c1a403371ae67dce09212bb8c4512a1",
             "file": "src/app/create-account/create-account.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -628,13 +698,31 @@
             "methodsClass": [
                 {
                     "name": "onSubmit",
-                    "args": [],
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
                     "line": 23,
                     "deprecated": false,
-                    "deprecationMessage": ""
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
                 }
             ],
             "deprecated": false,
@@ -646,7 +734,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-create-account',\r\n  templateUrl: './create-account.component.html',\r\n  styleUrl: './create-account.component.scss'\r\n})\r\nexport class CreateAccountComponent {\r\n  showPassword=false;\r\n  accountForm: FormGroup\r\n  constructor(\r\n    private fb: FormBuilder\r\n  ) {\r\n    this.accountForm = this.fb.group({\r\n      firstName:['',Validators.required],\r\n      lastName:['',Validators.required],\r\n      email:['',Validators.required,Validators.email],\r\n      password:['',Validators.required],\r\n    })\r\n  }\r\n\r\n  onSubmit(){\r\n    console.log(this.accountForm.status);\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-create-account',\r\n  templateUrl: './create-account.component.html',\r\n  styleUrl: './create-account.component.scss'\r\n})\r\nexport class CreateAccountComponent {\r\n  showPassword=false;\r\n  accountForm: FormGroup\r\n  constructor(\r\n    private fb: FormBuilder\r\n  ) {\r\n    this.accountForm = this.fb.group({\r\n      firstName:['h',Validators.required],\r\n      lastName:['h',Validators.required],\r\n      email:['',Validators.required,Validators.email],\r\n      password:['',Validators.required],\r\n    })\r\n  }\r\n\r\n  onSubmit(event:Event){\r\n    event.preventDefault();\r\n    console.log(this.accountForm.status);\r\n  }\r\n\r\n}\r\n",
             "styleUrl": "./create-account.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -678,7 +766,84 @@
                 ]
             },
             "extends": [],
-            "templateData": "<div class=\"h-screen w-screen relative flex box-border p-40\">\r\n    <div class=\"absolute h-screen right-0 top-0\">\r\n        <img src=\"assets/bg-create-account.png\" class=\"h-screen\">\r\n    </div>\r\n    <div class=\"z-10 w-full max-w-xl flex flex-col gap-10\">\r\n        <header>\r\n            <div class=\"uppercase text-gray-400 font-bold\">Start for free</div>\r\n            <h1 class=\"text-5xl font-bold\">Create new account</h1>\r\n        </header>\r\n        <form class=\"grid grid-cols-1 lg:grid-cols-2  gap-4 w-full \" [formGroup]=\"accountForm\" (ngSubmit)=\"onSubmit()\" >\r\n            <div class=\"input\">\r\n                <label for=\"\" class=\"\">First name</label>   \r\n                <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"14\" width=\"14\" viewBox=\"0 0 576 512\" fill=\"rgb(107 114 128 / var(--tw-text-opacity))\"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d=\"M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l448 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zm80 256l64 0c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16L80 384c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm-32-96a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zm256-32l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z\"/></svg>    \r\n                <input type=\"text\" placeholder=\"John\" formControlName=\"firstName\" >\r\n            </div>\r\n            <div class=\"input\">\r\n                <label for=\"\" class=\"\">Last name</label>   \r\n                <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"14\" width=\"14\" viewBox=\"0 0 576 512\" fill=\"rgb(107 114 128 / var(--tw-text-opacity))\"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d=\"M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l448 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zm80 256l64 0c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16L80 384c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm-32-96a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zm256-32l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z\"/></svg>    \r\n                <input type=\"text\" placeholder=\"Doe\" formControlName=\"lastName\" >\r\n            </div>\r\n            <div class=\"input lg:col-span-2\">\r\n                <label for=\"\" class=\"\">Email</label>\r\n                <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"14\" width=\"14\" viewBox=\"0 0 512 512\" fill=\"rgb(107 114 128 / var(--tw-text-opacity))\"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d=\"M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z\"/></svg>\r\n                <input type=\"text\" placeholder=\"john.doe@email.com\" formArrayName=\"email\" >\r\n            </div>\r\n            <div class=\"input lg:col-span-2\">\r\n                <label for=\"\" class=\"\">Password</label>\r\n                <svg (click)=\"showPassword=!showPassword\" xmlns=\"http://www.w3.org/2000/svg\" height=\"14\" width=\"14\" viewBox=\"0 0 576 512\" fill=\"rgb(107 114 128 / var(--tw-text-opacity))\"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d=\"M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z\"/></svg>\r\n                <input type=\"text\" placeholder=\"&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;\" [type]=\"showPassword?'text':'password'\" formArrayName=\"password\">\r\n            </div>\r\n            <div class=\"input lg:col-span-2 font-bold text-gray-400 mix-blend-difference\">\r\n                Already have an account? <a href=\"#\" class=\"text-blue-500\">Sign In</a>\r\n            </div>\r\n            <button  class=\"mt-4 bg-blue-500 rounded-full shadow-md shadow-indigo-400 text-white font-semibold w-full py-3 text-xs lg:col-span-2\">Create account</button>\r\n        </form>\r\n    </div>\r\n\r\n\r\n</div>\r\n"
+            "templateData": "<div class=\"h-screen w-screen relative flex box-border p-40\">\r\n    <div class=\"absolute h-screen right-0 top-0\">\r\n        <img src=\"assets/bg-create-account.png\" class=\"h-screen\">\r\n    </div>\r\n    <div class=\"z-10 w-full max-w-xl flex flex-col gap-10\">\r\n        <header>\r\n            <div class=\"uppercase text-gray-400 font-bold\">Start for free</div>\r\n            <h1 class=\"text-5xl font-bold\">Create new account</h1>\r\n        </header>\r\n        <form class=\"grid grid-cols-1 lg:grid-cols-2  gap-4 w-full \" [formGroup]=\"accountForm\" (ngSubmit)=\"onSubmit($event)\" >\r\n            <div class=\"input\">\r\n                <label for=\"\" class=\"\">First name</label>   \r\n                <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"14\" width=\"14\" viewBox=\"0 0 576 512\" fill=\"rgb(107 114 128 / var(--tw-text-opacity))\"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d=\"M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l448 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zm80 256l64 0c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16L80 384c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm-32-96a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zm256-32l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z\"/></svg>    \r\n                <input type=\"text\" placeholder=\"John\" formControlName=\"firstName\" >\r\n            </div>\r\n            <div class=\"input\">\r\n                <label for=\"\" class=\"\">Last name</label>   \r\n                <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"14\" width=\"14\" viewBox=\"0 0 576 512\" fill=\"rgb(107 114 128 / var(--tw-text-opacity))\"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d=\"M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l448 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zm80 256l64 0c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16L80 384c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm-32-96a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zm256-32l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z\"/></svg>    \r\n                <input type=\"text\" placeholder=\"Doe\" formControlName=\"lastName\" >\r\n            </div>\r\n            <div class=\"input lg:col-span-2\">\r\n                <label for=\"\" class=\"\">Email</label>\r\n                <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"14\" width=\"14\" viewBox=\"0 0 512 512\" fill=\"rgb(107 114 128 / var(--tw-text-opacity))\"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d=\"M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z\"/></svg>\r\n                <input type=\"text\" placeholder=\"john.doe@email.com\" formArrayName=\"email\" >\r\n            </div>\r\n            <div class=\"input lg:col-span-2\">\r\n                <label for=\"\" class=\"\">Password</label>\r\n                <svg (click)=\"showPassword=!showPassword\" xmlns=\"http://www.w3.org/2000/svg\" height=\"14\" width=\"14\" viewBox=\"0 0 576 512\" fill=\"rgb(107 114 128 / var(--tw-text-opacity))\"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d=\"M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z\"/></svg>\r\n                <input type=\"text\" placeholder=\"&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;\" [type]=\"showPassword?'text':'password'\" formArrayName=\"password\">\r\n            </div>\r\n            <div class=\"input lg:col-span-2 font-bold text-gray-400 mix-blend-difference\">\r\n                Already have an account? <a href=\"#\" class=\"text-blue-500\">Sign In</a>\r\n            </div>\r\n            <button type=\"submit\"  class=\"mt-4 bg-blue-500 rounded-full shadow-md shadow-indigo-400 text-white font-semibold w-full py-3 text-xs lg:col-span-2\">Create account</button>\r\n        </form>\r\n    </div>\r\n\r\n\r\n</div>\r\n"
+        },
+        {
+            "name": "EventCardComponent",
+            "id": "component-EventCardComponent-eefe1ee43c214695a63323f1e3209672c4df6180008d6e9f1249b7c208b5c1282b93261ed9b33f0b583f76822a8b002188cd705b178d9422312ab2b5f7c4fbbf",
+            "file": "src/app/music-events/event-card/event-card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-event-card",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./event-card.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "cardInfo",
+                    "defaultValue": "{\r\n    title: 'Swiftogeddon - the taylor swift club night',\r\n    description: 'Swiftogeddon is a night dedicated to worshipping at the altar of Taylor Swift: non-stop Swifty all night: deep cuts,fan favourites uhsiaouilda ujeafhwe sifhewhiu ouiwaHF WOIEHF',\r\n    isSoldOut: false,\r\n    date: new Date('04/24/2025'),\r\n    time: '21:00',\r\n    color: 'bg-red-100'\r\n  }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "EventCard",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "isToday",
+                    "args": [
+                        {
+                            "name": "date",
+                            "type": "Date",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "date",
+                            "type": "Date",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\nexport interface EventCard{\r\n  title:string;\r\n  description:string;\r\n  isSoldOut: boolean;\r\n  date: Date;\r\n  time: string;\r\n  color: string;\r\n}\r\n\r\n@Component({\r\n  selector: 'app-event-card',\r\n  templateUrl: './event-card.component.html',\r\n  styleUrl: './event-card.component.scss'\r\n})\r\nexport class EventCardComponent {\r\n  @Input()\r\n  cardInfo: EventCard = {\r\n    title: 'Swiftogeddon - the taylor swift club night',\r\n    description: 'Swiftogeddon is a night dedicated to worshipping at the altar of Taylor Swift: non-stop Swifty all night: deep cuts,fan favourites uhsiaouilda ujeafhwe sifhewhiu ouiwaHF WOIEHF',\r\n    isSoldOut: false,\r\n    date: new Date('04/24/2025'),\r\n    time: '21:00',\r\n    color: 'bg-red-100'\r\n  }\r\n  isToday(date: Date): boolean {\r\n    const today = new Date();\r\n  \r\n    // Compare year, month, and day\r\n    return (\r\n      date.getFullYear() === today.getFullYear() &&\r\n      date.getMonth() === today.getMonth() &&\r\n      date.getDate() === today.getDate()\r\n    );\r\n  }\r\n\r\n}\r\n",
+            "styleUrl": "./event-card.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"w-full bg-white h-auto rounded-lg flex flex-col gap-4 md:flex-row justify-between items-center relative p-4\">\r\n    <div class=\"flex flex-col md:flex-row gap-4 items-center h-full relative\">\r\n        <div class=\"{{cardInfo.color}} self-stretch relative w-full md:w-24 md:min-w-24 rounded-md flex flex-col justify-center text-center box-border text-gray-700\">\r\n            <div class=\"text-xs font-semibold\">\r\n                {{isToday(cardInfo.date)?'Today':cardInfo.date.toLocaleDateString('en-UK',{day:'numeric',month:'long'})}}\r\n            </div>\r\n            <div class=\"text-3xl font-semibold\">\r\n                {{cardInfo.time}}\r\n            </div>\r\n        </div>\r\n        <div class=\"flex flex-col gap-1 max-w-3xl\">\r\n            <div class=\"capitalize text-xl md:text-2xl font-bold line-clamp-1\">\r\n                {{cardInfo.title}}\r\n            </div>\r\n            <div class=\"text-sm md:text-base text-ellipsis overflow-hidden line-clamp-2\">\r\n                {{cardInfo.description}}\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <button [ngClass]=\"cardInfo.isSoldOut?'is-sold-out':'buy-ticket--button'\">\r\n        @if(cardInfo.isSoldOut){\r\n            Sold Out!\r\n        }@else{\r\n            <svg xmlns=\"http://www.w3.org/2000/svg\"  viewBox=\"0 0 576 512\" class=\"size-4\" fill=\"white\"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d=\"M64 64C28.7 64 0 92.7 0 128l0 64c0 8.8 7.4 15.7 15.7 18.6C34.5 217.1 48 235 48 256s-13.5 38.9-32.3 45.4C7.4 304.3 0 311.2 0 320l0 64c0 35.3 28.7 64 64 64l448 0c35.3 0 64-28.7 64-64l0-64c0-8.8-7.4-15.7-15.7-18.6C541.5 294.9 528 277 528 256s13.5-38.9 32.3-45.4c8.3-2.9 15.7-9.8 15.7-18.6l0-64c0-35.3-28.7-64-64-64L64 64zm64 112l0 160c0 8.8 7.2 16 16 16l288 0c8.8 0 16-7.2 16-16l0-160c0-8.8-7.2-16-16-16l-288 0c-8.8 0-16 7.2-16 16zM96 160c0-17.7 14.3-32 32-32l320 0c17.7 0 32 14.3 32 32l0 192c0 17.7-14.3 32-32 32l-320 0c-17.7 0-32-14.3-32-32l0-192z\"/></svg>Buy a Ticket\r\n        }\r\n    </button>\r\n</div>\r\n"
         },
         {
             "name": "MobileNavigationComponent",
@@ -767,6 +932,54 @@
             "stylesData": "",
             "extends": [],
             "templateData": "<div class=\"mobile-nav\">\r\n    <router-outlet style=\"display: none;\"></router-outlet>\r\n    <div class=\"mobile-nav--icons\">\r\n        <button (click)=\"changeSelectedView(0)\" routerLink=\"'no-page'\">\r\n            <i class=\"bi bi-house\" [ngClass]=\"selectedView==0?'selected':''\" ></i>\r\n        </button>\r\n        <button (click)=\"changeSelectedView(1)\">\r\n            <i class=\"bi bi-graph-up-arrow\" [ngClass]=\"selectedView==1?'selected':''\"></i>\r\n        </button>\r\n        <button (click)=\"changeSelectedView(2)\">\r\n            <i class=\"bi bi-envelope\" [ngClass]=\"selectedView==2?'selected':''\"></i>\r\n        </button>\r\n        <button (click)=\"changeSelectedView(3)\" routerLink=\"\">\r\n            <i class=\"bi bi-person\" [ngClass]=\"selectedView==3?'selected':''\"></i>\r\n        </button>\r\n    </div>\r\n</div>"
+        },
+        {
+            "name": "MusicEventsComponent",
+            "id": "component-MusicEventsComponent-a5a653f02ecdde12efc4d540bf70c4e8a2da4fbad32831fdfdcd9b779734bf447390d980db84d6d2a4726196fd66109cd7cfc85328e68b512cd4738bead7564b",
+            "file": "src/app/music-events/music-events.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-music-events",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./music-events.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "events",
+                    "defaultValue": "[\r\n    {\r\n      title: '',\r\n      description: '',\r\n      isSoldOut: false,\r\n      date: new Date(),\r\n      time: '',\r\n      color: 'bg-red-100'\r\n    },\r\n    {\r\n      title: '',\r\n      description: '',\r\n      isSoldOut: false,\r\n      date: new Date(),\r\n      time: '',\r\n      color: 'bg-red-100'\r\n    },\r\n    {\r\n      title: '',\r\n      description: '',\r\n      isSoldOut: false,\r\n      date: new Date(),\r\n      time: '',\r\n      color: 'bg-red-100'\r\n    },{\r\n      title: '',\r\n      description: '',\r\n      isSoldOut: false,\r\n      date: new Date(),\r\n      time: '',\r\n      color: 'bg-red-100'\r\n    },\r\n    {\r\n      title: '',\r\n      description: '',\r\n      isSoldOut: false,\r\n      date: new Date(),\r\n      time: '',\r\n      color: 'bg-red-100'\r\n    },\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "EventCard[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { EventCard } from './event-card/event-card.component';\r\n\r\n@Component({\r\n  selector: 'app-music-events',\r\n  templateUrl: './music-events.component.html',\r\n  styleUrl: './music-events.component.scss'\r\n})\r\nexport class MusicEventsComponent {\r\n  @Input()\r\n  events: EventCard[]=[\r\n    {\r\n      title: '',\r\n      description: '',\r\n      isSoldOut: false,\r\n      date: new Date(),\r\n      time: '',\r\n      color: 'bg-red-100'\r\n    },\r\n    {\r\n      title: '',\r\n      description: '',\r\n      isSoldOut: false,\r\n      date: new Date(),\r\n      time: '',\r\n      color: 'bg-red-100'\r\n    },\r\n    {\r\n      title: '',\r\n      description: '',\r\n      isSoldOut: false,\r\n      date: new Date(),\r\n      time: '',\r\n      color: 'bg-red-100'\r\n    },{\r\n      title: '',\r\n      description: '',\r\n      isSoldOut: false,\r\n      date: new Date(),\r\n      time: '',\r\n      color: 'bg-red-100'\r\n    },\r\n    {\r\n      title: '',\r\n      description: '',\r\n      isSoldOut: false,\r\n      date: new Date(),\r\n      time: '',\r\n      color: 'bg-red-100'\r\n    },\r\n  ];\r\n\r\n\r\n}\r\n",
+            "styleUrl": "./music-events.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"p-10 sm:p-14 md:p-24 flex flex-col gap-7 w-screen h-screen transition-all bg-blue-50\">\r\n    <header class=\"flex flex-col gap-2\">\r\n        <h1 class=\"text-4xl font-ubuntu font-bold\">\r\n            Music events\r\n        </h1>\r\n        <h2 class=\"text-xl font-ubuntu font-normal\">\r\n            in London, United Kingdom\r\n        </h2>\r\n    </header>\r\n    <div>\r\n        @for (event of events; track $index) {\r\n            <app-event-card [cardInfo]=\"event\"></app-event-card>\r\n        }\r\n    </div>\r\n</div>\r\n"
         },
         {
             "name": "NoPageComponent",
@@ -976,13 +1189,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-81ce39950b0f8a8e5b5a52943d4616175e51f63c40386bf5006a6a015fef9a1fa38eb423e43342fdfb2d2c0e8b093098dfcbfb621be9696caab8744a5025a341",
+            "id": "module-AppModule-7aa370e504f0cc2807e985cc70cf33d0db181c20def8f9cbb41d85e1c9a80ca0014c76e3e5b5a6737cdd2f0e86e3efc890837454002bbc45728321b421b0ae67",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport {ReactiveFormsModule} from '@angular/forms'\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { ProfileCardComponent } from './profile-card/profile-card.component';\r\nimport { AddToBagComponent } from './add-to-bag/add-to-bag.component';\r\nimport { MobileNavigationComponent } from './mobile-navigation/mobile-navigation.component';\r\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\r\nimport { ProfilePageComponent } from './mobile-navigation/profile-page/profile-page.component';\r\nimport { NoPageComponent } from './mobile-navigation/no-page/no-page.component';\r\nimport { RouterOutlet } from '@angular/router';\r\nimport { ContactUsComponent } from './contact-us/contact-us.component';\r\nimport { RecipeComponent } from './recipe/recipe.component';\r\nimport { CarouselComponent } from './carousel/carousel.component';\r\nimport { CreateAccountComponent } from './create-account/create-account.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    ProfileCardComponent,\r\n    AddToBagComponent,\r\n    MobileNavigationComponent,\r\n    ProfilePageComponent,\r\n    NoPageComponent,\r\n    ContactUsComponent,\r\n    RecipeComponent,\r\n    CarouselComponent,\r\n    CreateAccountComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    RouterOutlet,\r\n    FontAwesomeModule,\r\n    ReactiveFormsModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport {ReactiveFormsModule} from '@angular/forms'\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { ProfileCardComponent } from './profile-card/profile-card.component';\r\nimport { AddToBagComponent } from './add-to-bag/add-to-bag.component';\r\nimport { MobileNavigationComponent } from './mobile-navigation/mobile-navigation.component';\r\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\r\nimport { ProfilePageComponent } from './mobile-navigation/profile-page/profile-page.component';\r\nimport { NoPageComponent } from './mobile-navigation/no-page/no-page.component';\r\nimport { RouterOutlet } from '@angular/router';\r\nimport { ContactUsComponent } from './contact-us/contact-us.component';\r\nimport { RecipeComponent } from './recipe/recipe.component';\r\nimport { CarouselComponent } from './carousel/carousel.component';\r\nimport { CreateAccountComponent } from './create-account/create-account.component';\r\nimport { MusicEventsComponent } from './music-events/music-events.component';\r\nimport { EventCardComponent } from './music-events/event-card/event-card.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    ProfileCardComponent,\r\n    AddToBagComponent,\r\n    MobileNavigationComponent,\r\n    ProfilePageComponent,\r\n    NoPageComponent,\r\n    ContactUsComponent,\r\n    RecipeComponent,\r\n    CarouselComponent,\r\n    CreateAccountComponent,\r\n    MusicEventsComponent,\r\n    EventCardComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    RouterOutlet,\r\n    FontAwesomeModule,\r\n    ReactiveFormsModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1007,7 +1220,13 @@
                             "name": "CreateAccountComponent"
                         },
                         {
+                            "name": "EventCardComponent"
+                        },
+                        {
                             "name": "MobileNavigationComponent"
+                        },
+                        {
+                            "name": "MusicEventsComponent"
                         },
                         {
                             "name": "NoPageComponent"
@@ -1176,6 +1395,33 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "ProfilePageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/music-events/event-card/event-card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "EventCardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/music-events/event-card/event-card.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "EventCard",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/music-events/music-events.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MusicEventsComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
                 "status": "low"

@@ -15,6 +15,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { MusicEventsComponent } from './music-events/music-events.component';
+import { EventCardComponent } from './music-events/event-card/event-card.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { CreateAccountComponent } from './create-account/create-account.componen
     ContactUsComponent,
     RecipeComponent,
     CarouselComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    MusicEventsComponent,
+    EventCardComponent
   ],
   imports: [
     BrowserModule,
