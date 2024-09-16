@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {ReactiveFormsModule} from '@angular/forms'
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +17,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { MusicEventsComponent } from './music-events/music-events.component';
 import { EventCardComponent } from './music-events/event-card/event-card.component';
+import { PasswordGeneratorComponent } from './password-generator/password-generator.component';
 
 @NgModule({
   declarations: [
@@ -31,14 +32,16 @@ import { EventCardComponent } from './music-events/event-card/event-card.compone
     CarouselComponent,
     CreateAccountComponent,
     MusicEventsComponent,
-    EventCardComponent
+    EventCardComponent,
+    PasswordGeneratorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterOutlet,
     FontAwesomeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

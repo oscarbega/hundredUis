@@ -365,7 +365,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<app-recipe></app-recipe>\r\n\r\n<router-outlet />\r\n"
+            "templateData": "<app-password-generator></app-password-generator>\r\n\r\n<router-outlet />\r\n"
         },
         {
             "name": "CarouselComponent",
@@ -935,7 +935,7 @@
         },
         {
             "name": "MusicEventsComponent",
-            "id": "component-MusicEventsComponent-a5a653f02ecdde12efc4d540bf70c4e8a2da4fbad32831fdfdcd9b779734bf447390d980db84d6d2a4726196fd66109cd7cfc85328e68b512cd4738bead7564b",
+            "id": "component-MusicEventsComponent-c49d340ea231ab6c93978a1ca9fe97907e6742f2b7b3ab14df0f038b1949649094c1fcab3ac173dcb6fedea3364cfc4e9807c6d7eafecda36cad02498be123aa",
             "file": "src/app/music-events/music-events.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -953,7 +953,7 @@
             "inputsClass": [
                 {
                     "name": "events",
-                    "defaultValue": "[\r\n    {\r\n      title: '',\r\n      description: '',\r\n      isSoldOut: false,\r\n      date: new Date(),\r\n      time: '',\r\n      color: 'bg-red-100'\r\n    },\r\n    {\r\n      title: '',\r\n      description: '',\r\n      isSoldOut: false,\r\n      date: new Date(),\r\n      time: '',\r\n      color: 'bg-red-100'\r\n    },\r\n    {\r\n      title: '',\r\n      description: '',\r\n      isSoldOut: false,\r\n      date: new Date(),\r\n      time: '',\r\n      color: 'bg-red-100'\r\n    },{\r\n      title: '',\r\n      description: '',\r\n      isSoldOut: false,\r\n      date: new Date(),\r\n      time: '',\r\n      color: 'bg-red-100'\r\n    },\r\n    {\r\n      title: '',\r\n      description: '',\r\n      isSoldOut: false,\r\n      date: new Date(),\r\n      time: '',\r\n      color: 'bg-red-100'\r\n    },\r\n  ]",
+                    "defaultValue": "[\r\n    {\r\n      title: '',\r\n      description: '',\r\n      isSoldOut: false,\r\n      date: new Date(),\r\n      time: '',\r\n      color: 'bg-red-100'\r\n    }\r\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 11,
@@ -973,13 +973,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { EventCard } from './event-card/event-card.component';\r\n\r\n@Component({\r\n  selector: 'app-music-events',\r\n  templateUrl: './music-events.component.html',\r\n  styleUrl: './music-events.component.scss'\r\n})\r\nexport class MusicEventsComponent {\r\n  @Input()\r\n  events: EventCard[]=[\r\n    {\r\n      title: '',\r\n      description: '',\r\n      isSoldOut: false,\r\n      date: new Date(),\r\n      time: '',\r\n      color: 'bg-red-100'\r\n    },\r\n    {\r\n      title: '',\r\n      description: '',\r\n      isSoldOut: false,\r\n      date: new Date(),\r\n      time: '',\r\n      color: 'bg-red-100'\r\n    },\r\n    {\r\n      title: '',\r\n      description: '',\r\n      isSoldOut: false,\r\n      date: new Date(),\r\n      time: '',\r\n      color: 'bg-red-100'\r\n    },{\r\n      title: '',\r\n      description: '',\r\n      isSoldOut: false,\r\n      date: new Date(),\r\n      time: '',\r\n      color: 'bg-red-100'\r\n    },\r\n    {\r\n      title: '',\r\n      description: '',\r\n      isSoldOut: false,\r\n      date: new Date(),\r\n      time: '',\r\n      color: 'bg-red-100'\r\n    },\r\n  ];\r\n\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { EventCard } from './event-card/event-card.component';\r\n\r\n@Component({\r\n  selector: 'app-music-events',\r\n  templateUrl: './music-events.component.html',\r\n  styleUrl: './music-events.component.scss'\r\n})\r\nexport class MusicEventsComponent {\r\n  @Input()\r\n  events: EventCard[]=[\r\n    {\r\n      title: '',\r\n      description: '',\r\n      isSoldOut: false,\r\n      date: new Date(),\r\n      time: '',\r\n      color: 'bg-red-100'\r\n    }\r\n  ];\r\n\r\n\r\n}\r\n",
             "styleUrl": "./music-events.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"p-10 sm:p-14 md:p-24 flex flex-col gap-7 w-screen h-screen transition-all bg-blue-50\">\r\n    <header class=\"flex flex-col gap-2\">\r\n        <h1 class=\"text-4xl font-ubuntu font-bold\">\r\n            Music events\r\n        </h1>\r\n        <h2 class=\"text-xl font-ubuntu font-normal\">\r\n            in London, United Kingdom\r\n        </h2>\r\n    </header>\r\n    <div>\r\n        @for (event of events; track $index) {\r\n            <app-event-card [cardInfo]=\"event\"></app-event-card>\r\n        }\r\n    </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"p-10 sm:p-14 md:p-24 flex flex-col gap-7 w-100 box-border  transition-all bg-blue-50\">\r\n    <header class=\"flex flex-col gap-2\">\r\n        <h1 class=\"text-4xl font-ubuntu font-bold\">\r\n            Music events\r\n        </h1>\r\n        <h2 class=\"text-xl font-ubuntu font-normal\">\r\n            in London, United Kingdom\r\n        </h2>\r\n    </header>\r\n    <div class=\"flex flex-col w-100 gap-4\">\r\n        @for (event of events; track $index) {\r\n            <app-event-card [cardInfo]=\"event\"></app-event-card>\r\n        }\r\n    </div>\r\n</div>\r\n"
         },
         {
             "name": "NoPageComponent",
@@ -1018,6 +1018,84 @@
             "stylesData": "",
             "extends": [],
             "templateData": "<p>no-page works!</p>\r\n"
+        },
+        {
+            "name": "PasswordGeneratorComponent",
+            "id": "component-PasswordGeneratorComponent-c7bbd2e99ac46a9e7bc70efb6bf83a372468fae7d6f721719a949cce5bbaab6fef310b300e484aaadd94c80ca36e91f7f6543dc09884f545ca6183d26243d7eb",
+            "file": "src/app/password-generator/password-generator.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-password-generator",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./password-generator.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "length",
+                    "defaultValue": "12",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onLengthChange",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { ValueChangeEvent } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-password-generator',\r\n  templateUrl: './password-generator.component.html',\r\n  styleUrl: './password-generator.component.scss'\r\n})\r\nexport class PasswordGeneratorComponent {\r\n\r\n  length:number = 12;\r\n  onLengthChange(event:Event){\r\n    console.log(event)\r\n  }\r\n\r\n}\r\n",
+            "styleUrl": "./password-generator.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"w-96 h-auto shadow-lg shadow-gray-500  text-violet-50  bg-dark-purple rounded-xl py-6 px-4 font-sans flex flex-col gap-8\">\r\n    <header>\r\n        <h1 class=\"font-semibold text-2xl\">\r\n            Generate password\r\n        </h1>\r\n    </header>\r\n    <main class=\"text-neutral-400 flex flex-col gap-4\" >\r\n        <div class=\"uppercase font-light text-opacity-10 text-xs flex flex-col gap-2\">\r\n            Generated Password\r\n            <input type=\"text\" disabled class=\"w-full h-12 rounded-2xl bg-purple-500 bg-opacity-20\">\r\n        </div>\r\n        <div class=\"uppercase font-light text-opacity-10 text-xs flex flex-col gap-2\">\r\n            <div class=\"flex justify-between\">Character length: <div  class=\"font-bold text-sm text-fuchsia-500\">{{length}}</div></div>\r\n            <div class=\"w-full font-normal h-10 rounded-2xl bg-purple-500 bg-opacity-20 flex items-center justify-around text-center\">\r\n                <div class=\"w-1/12\">12</div>\r\n                <input \r\n                    type=\"range\" \r\n                    class=\"\r\n                    bg-gray-700\r\n                    [&::-webkit-slider-runnable-track]:rounded-full \r\n                    [&::-webkit-slider-thumb]: bg-black\r\n                    [&::-webkit-slider-thumb]:h-5 \r\n                    [&::-webkit-slider-thumb]:w-5 \r\n                    [&::-webkit-slider-thumb]:rounded-full \r\n                    [&::-webkit-slider-runnable-track]:bg-purple-500;\r\n                    rounded-full\r\n                    h-2\r\n                    w-9/12 \r\n                    accent-fuchsia-500\r\n                     transition-all\r\n                    \"\r\n                    [(ngModel)]=\"length\"\r\n                    min=\"12\"\r\n                    max=\"32\" >\r\n                <div class=\"w-1/12\">32</div>\r\n            </div>\r\n        </div>\r\n        <div class=\"uppercase font-light text-opacity-10 text-xs flex flex-col gap-2\">\r\n            Settings\r\n            <div class=\"w-full font-normal h-10 rounded-2xl text-xs normal-case bg-purple-500 bg-opacity-20 flex items-center px-2 justify-between text-center\">\r\n                Include uppercase letters\r\n                <label class=\"inline-flex items-center cursor-pointer\">\r\n                    <input type=\"checkbox\" value=\"\" class=\"sr-only peer\" checked>\r\n                    <div class=\"relative w-7 h-4 bg-fuchsia-400 opacity-40 rounded-full peer  dark:bg-gray-700 transition-all peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-fuchsia-600 peer-checked:opacity-100\"></div>\r\n                  </label>\r\n            </div>\r\n            <div class=\"w-full font-normal h-10 rounded-2xl text-xs normal-case bg-purple-500 bg-opacity-20 flex items-center px-2 justify-between text-center\">\r\n                Include lowercase letters\r\n                <label class=\"inline-flex items-center cursor-pointer\">\r\n                    <input type=\"checkbox\" value=\"\" class=\"sr-only peer\" checked>\r\n                    <div class=\"relative w-7 h-4 bg-fuchsia-400 opacity-40 rounded-full peer  dark:bg-gray-700 transition-all peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-fuchsia-600 peer-checked:opacity-100\"></div>\r\n                  </label>\r\n            </div>\r\n            <div class=\"w-full font-normal h-10 rounded-2xl text-xs normal-case bg-purple-500 bg-opacity-20 flex items-center px-2 justify-between text-center\">\r\n                Include numbers\r\n                <label class=\"inline-flex items-center cursor-pointer\">\r\n                    <input type=\"checkbox\" value=\"\" class=\"sr-only peer\" checked>\r\n                    <div class=\"relative w-7 h-4 bg-fuchsia-400 opacity-40 rounded-full peer  dark:bg-gray-700 transition-all peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-fuchsia-600 peer-checked:opacity-100\"></div>\r\n                  </label>\r\n            </div>\r\n            <div class=\"w-full font-normal h-10 rounded-2xl text-xs normal-case bg-purple-500 bg-opacity-20 flex items-center px-2 justify-between text-center\">\r\n                Include symbols\r\n                <label class=\"inline-flex items-center cursor-pointer\">\r\n                    <input type=\"checkbox\" value=\"\" class=\"sr-only peer\" checked>\r\n                    <div class=\"relative w-7 h-4 bg-fuchsia-400 opacity-40 rounded-full peer  dark:bg-gray-700 transition-all peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-fuchsia-600 peer-checked:opacity-100\"></div>\r\n                  </label>\r\n            </div>\r\n            \r\n        </div>\r\n    </main>\r\n    <button class=\" w-full text-sm font-bold text-gray-100 bg-fuchsia-500 rounded-md py-2\">\r\n        Generate Password\r\n    </button>\r\n\r\n</div>"
         },
         {
             "name": "ProfileCardComponent",
@@ -1189,13 +1267,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-7aa370e504f0cc2807e985cc70cf33d0db181c20def8f9cbb41d85e1c9a80ca0014c76e3e5b5a6737cdd2f0e86e3efc890837454002bbc45728321b421b0ae67",
+            "id": "module-AppModule-f19dcdeb5d4acdf974e9ef53f80c6abb8436e9f0f53399ea21b1982c5ba230f6f2e5191897226d2e6a4caa9558373102ddca0be13c16e7f3a6307e3d941a95c0",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport {ReactiveFormsModule} from '@angular/forms'\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { ProfileCardComponent } from './profile-card/profile-card.component';\r\nimport { AddToBagComponent } from './add-to-bag/add-to-bag.component';\r\nimport { MobileNavigationComponent } from './mobile-navigation/mobile-navigation.component';\r\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\r\nimport { ProfilePageComponent } from './mobile-navigation/profile-page/profile-page.component';\r\nimport { NoPageComponent } from './mobile-navigation/no-page/no-page.component';\r\nimport { RouterOutlet } from '@angular/router';\r\nimport { ContactUsComponent } from './contact-us/contact-us.component';\r\nimport { RecipeComponent } from './recipe/recipe.component';\r\nimport { CarouselComponent } from './carousel/carousel.component';\r\nimport { CreateAccountComponent } from './create-account/create-account.component';\r\nimport { MusicEventsComponent } from './music-events/music-events.component';\r\nimport { EventCardComponent } from './music-events/event-card/event-card.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    ProfileCardComponent,\r\n    AddToBagComponent,\r\n    MobileNavigationComponent,\r\n    ProfilePageComponent,\r\n    NoPageComponent,\r\n    ContactUsComponent,\r\n    RecipeComponent,\r\n    CarouselComponent,\r\n    CreateAccountComponent,\r\n    MusicEventsComponent,\r\n    EventCardComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    RouterOutlet,\r\n    FontAwesomeModule,\r\n    ReactiveFormsModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport {FormsModule, ReactiveFormsModule} from '@angular/forms'\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { ProfileCardComponent } from './profile-card/profile-card.component';\r\nimport { AddToBagComponent } from './add-to-bag/add-to-bag.component';\r\nimport { MobileNavigationComponent } from './mobile-navigation/mobile-navigation.component';\r\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\r\nimport { ProfilePageComponent } from './mobile-navigation/profile-page/profile-page.component';\r\nimport { NoPageComponent } from './mobile-navigation/no-page/no-page.component';\r\nimport { RouterOutlet } from '@angular/router';\r\nimport { ContactUsComponent } from './contact-us/contact-us.component';\r\nimport { RecipeComponent } from './recipe/recipe.component';\r\nimport { CarouselComponent } from './carousel/carousel.component';\r\nimport { CreateAccountComponent } from './create-account/create-account.component';\r\nimport { MusicEventsComponent } from './music-events/music-events.component';\r\nimport { EventCardComponent } from './music-events/event-card/event-card.component';\r\nimport { PasswordGeneratorComponent } from './password-generator/password-generator.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    ProfileCardComponent,\r\n    AddToBagComponent,\r\n    MobileNavigationComponent,\r\n    ProfilePageComponent,\r\n    NoPageComponent,\r\n    ContactUsComponent,\r\n    RecipeComponent,\r\n    CarouselComponent,\r\n    CreateAccountComponent,\r\n    MusicEventsComponent,\r\n    EventCardComponent,\r\n    PasswordGeneratorComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    RouterOutlet,\r\n    FontAwesomeModule,\r\n    ReactiveFormsModule,\r\n    FormsModule,\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1230,6 +1308,9 @@
                         },
                         {
                             "name": "NoPageComponent"
+                        },
+                        {
+                            "name": "PasswordGeneratorComponent"
                         },
                         {
                             "name": "ProfileCardComponent"
@@ -1424,6 +1505,15 @@
                 "name": "MusicEventsComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/password-generator/password-generator.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PasswordGeneratorComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {

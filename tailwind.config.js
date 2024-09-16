@@ -5,6 +5,9 @@ module.exports = {
     extend: {
       fontFamily:{
         'ubuntu': ['Ubuntu']
+      },
+      colors:{
+        'dark-purple':'#090212'
       }
     },
   },

@@ -1,5 +1,7 @@
-import { Meta, StoryObj } from "@storybook/angular";
+import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
 import { RecipeComponent } from "./recipe.component";
+import { FormsModule } from "@angular/forms";
+import { CommonModule } from "@angular/common";
 
 export default {
     title: 'Challenge 5: Recipe',
