@@ -1,0 +1,22 @@
+button{
+    @apply border  p-3 text-xs font-medium rounded-md flex justify-center items-center gap-2;
+    svg{
+        @apply w-4 h-4
+    }
+}
+label{
+    @apply text-sm text-gray-400 absolute left-0 top-1/2 -translate-y-1/2 ml-2 cursor-text peer-focus:text-blue-500 
+    peer-focus:-translate-y-8 peer-focus:bg-white peer-focus:text-[0.6rem] peer-focus:px-1 transition-all 
+    peer-[.ng-dirty]:-translate-y-8 peer-[.ng-dirty]:bg-white peer-[.ng-dirty]:text-[0.6rem] peer-[.ng-dirty]:px-1 
+    peer-[.ng-invalid.ng-dirty:not(:focus)]:text-red-500
+}
+.form-input{
+    @apply relative
+}
+input{
+    @apply w-full  p-2 ring-1 ring-gray-300 rounded-md transition-all focus:border-0 focus:ring-1 focus:ring-blue-500 focus:outline-none
+}
+
+input.ng-invalid.ng-dirty:not(:focus){
+    @apply ring-1 ring-red-500
+}

@@ -18,6 +18,7 @@ import { CreateAccountComponent } from './create-account/create-account.componen
 import { MusicEventsComponent } from './music-events/music-events.component';
 import { EventCardComponent } from './music-events/event-card/event-card.component';
 import { PasswordGeneratorComponent } from './password-generator/password-generator.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { PasswordGeneratorComponent } from './password-generator/password-genera
     CreateAccountComponent,
     MusicEventsComponent,
     EventCardComponent,
-    PasswordGeneratorComponent
+    PasswordGeneratorComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,

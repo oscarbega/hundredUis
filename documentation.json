@@ -1021,7 +1021,7 @@
         },
         {
             "name": "PasswordGeneratorComponent",
-            "id": "component-PasswordGeneratorComponent-c7bbd2e99ac46a9e7bc70efb6bf83a372468fae7d6f721719a949cce5bbaab6fef310b300e484aaadd94c80ca36e91f7f6543dc09884f545ca6183d26243d7eb",
+            "id": "component-PasswordGeneratorComponent-dfbce8fe6af98769635246d47798bf8b479696d8969f9f9660e561e6f28530ebfcf826bad852107428726c21cfdefb8d89359e734648bd6dd2279a1be938184d",
             "file": "src/app/password-generator/password-generator.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1040,6 +1040,56 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
+                    "name": "generatedPassword",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                },
+                {
+                    "name": "includeLowercase",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                },
+                {
+                    "name": "includeNumbers",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "includeSpecialChars",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                },
+                {
+                    "name": "incudeUppercase",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                },
+                {
                     "name": "length",
                     "defaultValue": "12",
                     "deprecated": false,
@@ -1047,37 +1097,101 @@
                     "type": "number",
                     "optional": false,
                     "description": "",
-                    "line": 11
+                    "line": 18
+                },
+                {
+                    "name": "lowercaseChars",
+                    "defaultValue": "'abcdefghijklmnopqrstuvwxyz'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 25,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "numberChars",
+                    "defaultValue": "'0123456789'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 26,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "showCopy",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                },
+                {
+                    "name": "specialChars",
+                    "defaultValue": "'!@#$%^&*()_+[]{}|;:,.<>?'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 27,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "uppercaseChars",
+                    "defaultValue": "'ABCDEFGHIJKLMNOPQRSTUVWXYZ'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 24,
+                    "modifierKind": [
+                        123
+                    ]
                 }
             ],
             "methodsClass": [
                 {
-                    "name": "onLengthChange",
-                    "args": [
-                        {
-                            "name": "event",
-                            "type": "Event",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
+                    "name": "copy",
+                    "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 12,
+                    "line": 63,
                     "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "event",
-                            "type": "Event",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "generatePassword",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 30,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 10,
+                    "deprecated": false,
+                    "deprecationMessage": ""
                 }
             ],
             "deprecated": false,
@@ -1089,13 +1203,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { ValueChangeEvent } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-password-generator',\r\n  templateUrl: './password-generator.component.html',\r\n  styleUrl: './password-generator.component.scss'\r\n})\r\nexport class PasswordGeneratorComponent {\r\n\r\n  length:number = 12;\r\n  onLengthChange(event:Event){\r\n    console.log(event)\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { ValueChangeEvent } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-password-generator',\r\n  templateUrl: './password-generator.component.html',\r\n  styleUrl: './password-generator.component.scss'\r\n})\r\nexport class PasswordGeneratorComponent implements OnInit {\r\n  ngOnInit(): void {\r\n    this.generatePassword()\r\n  }\r\n  incudeUppercase = true\r\n  includeLowercase = true\r\n  includeNumbers = true\r\n  includeSpecialChars = true\r\n\r\n  length:number = 12;\r\n  \r\n  generatedPassword: string = '';\r\n  showCopy:boolean = false;\r\n\r\n  // Define character sets\r\n  private uppercaseChars: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';\r\n  private lowercaseChars: string = 'abcdefghijklmnopqrstuvwxyz';\r\n  private numberChars: string = '0123456789';\r\n  private specialChars: string = '!@#$%^&*()_+[]{}|;:,.<>?';\r\n\r\n  // Function to generate the password\r\n  generatePassword(): void {\r\n    let charPool: string = '';\r\n    let password: string = '';\r\n\r\n    // Add selected character sets to the pool\r\n    if (this.incudeUppercase) {\r\n      charPool += this.uppercaseChars;\r\n    }\r\n    if (this.includeLowercase) {\r\n      charPool += this.lowercaseChars;\r\n    }\r\n    if (this.includeNumbers) {\r\n      charPool += this.numberChars;\r\n    }\r\n    if (this.includeSpecialChars) {\r\n      charPool += this.specialChars;\r\n    }\r\n\r\n    // Ensure we have at least one character set selected\r\n    if (charPool.length === 0) {\r\n      alert('Please select at least one character set.');\r\n      return;\r\n    }\r\n\r\n    // Generate a random password of the desired length\r\n    for (let i = 0; i < this.length; i++) {\r\n      const randomIndex = Math.floor(Math.random() * charPool.length);\r\n      password += charPool[randomIndex];\r\n    }\r\n\r\n    // Store the generated password\r\n    this.generatedPassword = password;\r\n  }\r\n  copy(){\r\n    navigator.clipboard.writeText(this.generatedPassword).then(()=>{\r\n      this.showCopy = true;\r\n      setTimeout(() => {\r\n        this.showCopy = false;\r\n      },1000)\r\n    })\r\n  }\r\n\r\n}\r\n",
             "styleUrl": "./password-generator.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"w-96 h-auto shadow-lg shadow-gray-500  text-violet-50  bg-dark-purple rounded-xl py-6 px-4 font-sans flex flex-col gap-8\">\r\n    <header>\r\n        <h1 class=\"font-semibold text-2xl\">\r\n            Generate password\r\n        </h1>\r\n    </header>\r\n    <main class=\"text-neutral-400 flex flex-col gap-4\" >\r\n        <div class=\"uppercase font-light text-opacity-10 text-xs flex flex-col gap-2\">\r\n            Generated Password\r\n            <input type=\"text\" disabled class=\"w-full h-12 rounded-2xl bg-purple-500 bg-opacity-20\">\r\n        </div>\r\n        <div class=\"uppercase font-light text-opacity-10 text-xs flex flex-col gap-2\">\r\n            <div class=\"flex justify-between\">Character length: <div  class=\"font-bold text-sm text-fuchsia-500\">{{length}}</div></div>\r\n            <div class=\"w-full font-normal h-10 rounded-2xl bg-purple-500 bg-opacity-20 flex items-center justify-around text-center\">\r\n                <div class=\"w-1/12\">12</div>\r\n                <input \r\n                    type=\"range\" \r\n                    class=\"\r\n                    bg-gray-700\r\n                    [&::-webkit-slider-runnable-track]:rounded-full \r\n                    [&::-webkit-slider-thumb]: bg-black\r\n                    [&::-webkit-slider-thumb]:h-5 \r\n                    [&::-webkit-slider-thumb]:w-5 \r\n                    [&::-webkit-slider-thumb]:rounded-full \r\n                    [&::-webkit-slider-runnable-track]:bg-purple-500;\r\n                    rounded-full\r\n                    h-2\r\n                    w-9/12 \r\n                    accent-fuchsia-500\r\n                     transition-all\r\n                    \"\r\n                    [(ngModel)]=\"length\"\r\n                    min=\"12\"\r\n                    max=\"32\" >\r\n                <div class=\"w-1/12\">32</div>\r\n            </div>\r\n        </div>\r\n        <div class=\"uppercase font-light text-opacity-10 text-xs flex flex-col gap-2\">\r\n            Settings\r\n            <div class=\"w-full font-normal h-10 rounded-2xl text-xs normal-case bg-purple-500 bg-opacity-20 flex items-center px-2 justify-between text-center\">\r\n                Include uppercase letters\r\n                <label class=\"inline-flex items-center cursor-pointer\">\r\n                    <input type=\"checkbox\" value=\"\" class=\"sr-only peer\" checked>\r\n                    <div class=\"relative w-7 h-4 bg-fuchsia-400 opacity-40 rounded-full peer  dark:bg-gray-700 transition-all peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-fuchsia-600 peer-checked:opacity-100\"></div>\r\n                  </label>\r\n            </div>\r\n            <div class=\"w-full font-normal h-10 rounded-2xl text-xs normal-case bg-purple-500 bg-opacity-20 flex items-center px-2 justify-between text-center\">\r\n                Include lowercase letters\r\n                <label class=\"inline-flex items-center cursor-pointer\">\r\n                    <input type=\"checkbox\" value=\"\" class=\"sr-only peer\" checked>\r\n                    <div class=\"relative w-7 h-4 bg-fuchsia-400 opacity-40 rounded-full peer  dark:bg-gray-700 transition-all peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-fuchsia-600 peer-checked:opacity-100\"></div>\r\n                  </label>\r\n            </div>\r\n            <div class=\"w-full font-normal h-10 rounded-2xl text-xs normal-case bg-purple-500 bg-opacity-20 flex items-center px-2 justify-between text-center\">\r\n                Include numbers\r\n                <label class=\"inline-flex items-center cursor-pointer\">\r\n                    <input type=\"checkbox\" value=\"\" class=\"sr-only peer\" checked>\r\n                    <div class=\"relative w-7 h-4 bg-fuchsia-400 opacity-40 rounded-full peer  dark:bg-gray-700 transition-all peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-fuchsia-600 peer-checked:opacity-100\"></div>\r\n                  </label>\r\n            </div>\r\n            <div class=\"w-full font-normal h-10 rounded-2xl text-xs normal-case bg-purple-500 bg-opacity-20 flex items-center px-2 justify-between text-center\">\r\n                Include symbols\r\n                <label class=\"inline-flex items-center cursor-pointer\">\r\n                    <input type=\"checkbox\" value=\"\" class=\"sr-only peer\" checked>\r\n                    <div class=\"relative w-7 h-4 bg-fuchsia-400 opacity-40 rounded-full peer  dark:bg-gray-700 transition-all peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-fuchsia-600 peer-checked:opacity-100\"></div>\r\n                  </label>\r\n            </div>\r\n            \r\n        </div>\r\n    </main>\r\n    <button class=\" w-full text-sm font-bold text-gray-100 bg-fuchsia-500 rounded-md py-2\">\r\n        Generate Password\r\n    </button>\r\n\r\n</div>"
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"max-w-96 h-auto shadow-lg shadow-gray-500  text-violet-50  bg-dark-purple rounded-xl py-6 px-4 font-sans flex flex-col gap-8\">\r\n    <header>\r\n        <h1 class=\"font-semibold text-2xl\">\r\n            Generate password\r\n        </h1>\r\n    </header>\r\n    <main class=\"text-neutral-400 flex flex-col gap-4\" >\r\n        <div class=\"uppercase font-light text-opacity-10 text-xs flex flex-col gap-2\">\r\n            Generated Password\r\n\r\n            <div class=\"relative\">\r\n                <input type=\"text\" [(ngModel)]=\"generatedPassword\" disabled class=\"w-full h-12 px-2 rounded-2xl truncate pr-12 text-base text-ellipsis  font-bold tracking-wider text-neutral-200 bg-purple-500 bg-opacity-20\">\r\n                <div class=\"absolute right-2 flex top-1/2 -translate-y-1/2 gap-2 fill-fuchsia-500\">\r\n                    <div class=\"absolute text-nowrap -top-10\" [ngClass]=\"showCopy?'show':'hide'\">\r\n                        COPIED !\r\n                    </div>\r\n                    <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 448 512\" class=\"w-4 h-4 cursor-pointer\" (click)=\"copy()\"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d=\"M384 336l-192 0c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l140.1 0L400 115.9 400 320c0 8.8-7.2 16-16 16zM192 384l192 0c35.3 0 64-28.7 64-64l0-204.1c0-12.7-5.1-24.9-14.1-33.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1L192 0c-35.3 0-64 28.7-64 64l0 256c0 35.3 28.7 64 64 64zM64 128c-35.3 0-64 28.7-64 64L0 448c0 35.3 28.7 64 64 64l192 0c35.3 0 64-28.7 64-64l0-32-48 0 0 32c0 8.8-7.2 16-16 16L64 464c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l32 0 0-48-32 0z\"/></svg>\r\n                    <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" class=\"w-4 h-4 cursor-pointer\" (click)=\"generatePassword()\"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d=\"M142.9 142.9c-17.5 17.5-30.1 38-37.8 59.8c-5.9 16.7-24.2 25.4-40.8 19.5s-25.4-24.2-19.5-40.8C55.6 150.7 73.2 122 97.6 97.6c87.2-87.2 228.3-87.5 315.8-1L455 55c6.9-6.9 17.2-8.9 26.2-5.2s14.8 12.5 14.8 22.2l0 128c0 13.3-10.7 24-24 24l-8.4 0c0 0 0 0 0 0L344 224c-9.7 0-18.5-5.8-22.2-14.8s-1.7-19.3 5.2-26.2l41.1-41.1c-62.6-61.5-163.1-61.2-225.3 1zM16 312c0-13.3 10.7-24 24-24l7.6 0 .7 0L168 288c9.7 0 18.5 5.8 22.2 14.8s1.7 19.3-5.2 26.2l-41.1 41.1c62.6 61.5 163.1 61.2 225.3-1c17.5-17.5 30.1-38 37.8-59.8c5.9-16.7 24.2-25.4 40.8-19.5s25.4 24.2 19.5 40.8c-10.8 30.6-28.4 59.3-52.9 83.8c-87.2 87.2-228.3 87.5-315.8 1L57 457c-6.9 6.9-17.2 8.9-26.2 5.2S16 449.7 16 440l0-119.6 0-.7 0-7.6z\"/></svg>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"uppercase font-light text-opacity-10 text-xs flex flex-col gap-2\">\r\n            <div class=\"flex justify-between\">Character length: <div  class=\"font-bold text-sm text-fuchsia-500\">{{length}}</div></div>\r\n            <div class=\"w-full font-normal h-10 rounded-2xl bg-purple-500 bg-opacity-20 flex items-center justify-around text-center\">\r\n                <div class=\"w-1/12\">12</div>\r\n                <input \r\n                    type=\"range\" \r\n                    class=\"\r\n                    bg-gray-700\r\n                    [&::-webkit-slider-runnable-track]:rounded-full \r\n                    [&::-webkit-slider-thumb]: bg-black\r\n                    [&::-webkit-slider-thumb]:h-5 \r\n                    [&::-webkit-slider-thumb]:w-5 \r\n                    [&::-webkit-slider-thumb]:rounded-full \r\n                    [&::-webkit-slider-runnable-track]:bg-purple-500;\r\n                    rounded-full\r\n                    h-2\r\n                    w-9/12 \r\n                    accent-fuchsia-500\r\n                     transition-all\r\n                    \"\r\n                    [(ngModel)]=\"length\"\r\n                    min=\"12\"\r\n                    max=\"32\" >\r\n                <div class=\"w-1/12\">32</div>\r\n            </div>\r\n        </div>\r\n        <div class=\"uppercase font-light text-opacity-10 text-xs flex flex-col gap-2\">\r\n            Settings\r\n            <div class=\"w-full font-normal h-10 rounded-2xl text-xs normal-case bg-purple-500 bg-opacity-20 flex items-center px-2 justify-between text-center\">\r\n                Include uppercase letters\r\n                <label class=\"inline-flex items-center cursor-pointer\">\r\n                    <input type=\"checkbox\" [(ngModel)]=\"incudeUppercase\" class=\"sr-only peer\" checked>\r\n                    <div class=\"relative w-7 h-4 bg-fuchsia-400 opacity-40 rounded-full peer  dark:bg-gray-700 transition-all peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-fuchsia-600 peer-checked:opacity-100\"></div>\r\n                </label>\r\n            </div>\r\n            <div class=\"w-full font-normal h-10 rounded-2xl text-xs normal-case bg-purple-500 bg-opacity-20 flex items-center px-2 justify-between text-center\">\r\n                Include lowercase letters\r\n                <label class=\"inline-flex items-center cursor-pointer\">\r\n                    <input type=\"checkbox\" [(ngModel)]=\"includeLowercase\" class=\"sr-only peer\" checked>\r\n                    <div class=\"relative w-7 h-4 bg-fuchsia-400 opacity-40 rounded-full peer  dark:bg-gray-700 transition-all peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-fuchsia-600 peer-checked:opacity-100\"></div>\r\n                  </label>\r\n            </div>\r\n            <div class=\"w-full font-normal h-10 rounded-2xl text-xs normal-case bg-purple-500 bg-opacity-20 flex items-center px-2 justify-between text-center\">\r\n                Include numbers\r\n                <label class=\"inline-flex items-center cursor-pointer\">\r\n                    <input type=\"checkbox\" [(ngModel)]=\"includeNumbers\" class=\"sr-only peer\" checked>\r\n                    <div class=\"relative w-7 h-4 bg-fuchsia-400 opacity-40 rounded-full peer  dark:bg-gray-700 transition-all peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-fuchsia-600 peer-checked:opacity-100\"></div>\r\n                  </label>\r\n            </div>\r\n            <div class=\"w-full font-normal h-10 rounded-2xl text-xs normal-case bg-purple-500 bg-opacity-20 flex items-center px-2 justify-between text-center\">\r\n                Include symbols\r\n                <label class=\"inline-flex items-center cursor-pointer\">\r\n                    <input type=\"checkbox\" [(ngModel)]=\"includeSpecialChars\" class=\"sr-only peer\" checked>\r\n                    <div class=\"relative w-7 h-4 bg-fuchsia-400 opacity-40 rounded-full peer  dark:bg-gray-700 transition-all peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-fuchsia-600 peer-checked:opacity-100\"></div>\r\n                  </label>\r\n            </div>\r\n            \r\n        </div>\r\n    </main>\r\n    <button (click)=\"generatePassword()\" class=\" w-full text-sm font-bold text-gray-100 bg-fuchsia-500 rounded-md py-2\">\r\n        Generate Password\r\n    </button>\r\n\r\n</div>"
         },
         {
             "name": "ProfileCardComponent",
@@ -1262,18 +1379,141 @@
             "stylesData": "",
             "extends": [],
             "templateData": "<div class=\"flex flex-row  box-content relative\">\r\n    <img src=\"assets/Coconut-cream-coffee.webp\" class=\"w-2/5\">\r\n    <div class=\"flex flex-col w-3/5\">\r\n        <div class=\"flex flex-col p-10 gap-3 mt-60\">\r\n            <div class=\"flex flex-row w-auto gap-5\">\r\n                <div class=\"flex flex-row w-auto gap-2 items-center\">\r\n                    <div class=\"text-gray-500 h-full flex items-center\">\r\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-alarm\" viewBox=\"0 0 16 16\" class=\"h-5/6 w-auto\">\r\n                            <path d=\"M8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9z\"/>\r\n                            <path d=\"M6.5 0a.5.5 0 0 0 0 1H7v1.07a7.001 7.001 0 0 0-3.273 12.474l-.602.602a.5.5 0 0 0 .707.708l.746-.746A6.97 6.97 0 0 0 8 16a6.97 6.97 0 0 0 3.422-.892l.746.746a.5.5 0 0 0 .707-.708l-.601-.602A7.001 7.001 0 0 0 9 2.07V1h.5a.5.5 0 0 0 0-1zm1.038 3.018a6 6 0 0 1 .924 0 6 6 0 1 1-.924 0M0 3.5c0 .753.333 1.429.86 1.887A8.04 8.04 0 0 1 4.387 1.86 2.5 2.5 0 0 0 0 3.5M13.5 1c-.753 0-1.429.333-1.887.86a8.04 8.04 0 0 1 3.527 3.527A2.5 2.5 0 0 0 13.5 1\"/>\r\n                        </svg>\r\n                    </div>\r\n                    <div class=\"flex flex-col w-auto\">\r\n                        <div class=\"text-xs uppercase\">\r\n                            Total time\r\n                        </div>\r\n                        <div class=\"text-yellow-400 font-bold text-xs\">\r\n                            10 minutes\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"flex flex-row w-auto gap-2 items-center\">\r\n                    <div class=\"text-gray-500 h-full flex items-center\">\r\n                        <svg  xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-patch-check\" viewBox=\"0 0 16 16\" class=\"h-5/6 w-auto\">\r\n                            <path fill-rule=\"evenodd\" d=\"M10.354 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708 0\"/>\r\n                            <path d=\"m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911z\"/>\r\n                        </svg>\r\n                    </div>\r\n                    <div class=\"flex flex-col w-auto\">\r\n                        <div class=\"text-xs uppercase\">\r\n                            level\r\n                        </div>\r\n                        <div class=\"text-yellow-400 font-bold text-xs\">\r\n                            Easy\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"flex flex-row w-auto gap-2 items-center\">\r\n                    <div class=\"text-gray-500 h-full flex items-center\">\r\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-wallet2\" viewBox=\"0 0 16 16\" class=\"w-auto h-5/6\">\r\n                            <path d=\"M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5z\"/>\r\n                          </svg>\r\n                    </div>\r\n                    <div class=\"flex flex-col w-auto\">\r\n                        <div class=\"text-xs uppercase\">\r\n                            budget\r\n                        </div>\r\n                        <div class=\"text-yellow-400 font-bold text-xs\">\r\n                            Under $2\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <p class=\"italic max-w-xl\">\r\n                Sweet Iced Coffee with coconut milk is easy to make and stores well in the fridge. Make a large batch and save yourself a few trips to the coffee shop.\r\n            </p>\r\n        </div>\r\n\r\n        <div class=\"flex flex-col p-10 gap-6\">\r\n            <div class=\"flex flex-col gap-2\">\r\n                <h2 class=\"font-bold uppercase\">Ingredients</h2>\r\n                <div class=\"flex flex-col gap-2\">\r\n                    <div class=\"flex flex-row items-center gap-1\">\r\n                        <input type=\"checkbox\" id=\"customCheckbox\" class=\"accent-yellow-500 appearance-none relative w-4 h-4 border checked:bg-yellow-500 checked:border-yellow-500 checked:before:content-['\\2713'] checked:before:text-white checked:before:absolute checked:before:left-1/2 checked:before:top-1/2 checked:before:transform checked:before:-translate-x-1/2 checked:before:-translate-y-1/2\">\r\n                        <label for=\"\"> 3 tablespoons Espresso coffee powder</label>\r\n                    </div>\r\n                    <div class=\"flex flex-row items-center gap-1\">\r\n                        <input type=\"checkbox\" id=\"customCheckbox\" class=\"accent-yellow-500 appearance-none relative w-4 h-4 border checked:bg-yellow-500 checked:border-yellow-500 checked:before:content-['\\2713'] checked:before:text-white checked:before:absolute checked:before:left-1/2 checked:before:top-1/2 checked:before:transform checked:before:-translate-x-1/2 checked:before:-translate-y-1/2\">\r\n                        <label for=\"\"> 1 cup of boiling water</label>\r\n                    </div>\r\n                    <div class=\"flex flex-row items-center gap-1\">\r\n                        <input type=\"checkbox\" id=\"customCheckbox\" class=\"accent-yellow-500 appearance-none relative w-4 h-4 border checked:bg-yellow-500 checked:border-yellow-500 checked:before:content-['\\2713'] checked:before:text-white checked:before:absolute checked:before:left-1/2 checked:before:top-1/2 checked:before:transform checked:before:-translate-x-1/2 checked:before:-translate-y-1/2\">\r\n                        <label for=\"\"> 1 cup of coconut milk</label>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"flex flex-col gap-2\">\r\n                <h2 class=\"font-bold uppercase\">Instruction</h2>\r\n                <ol class=\"list-decimal box-border list-inside flex flex-col gap-2\">\r\n                    <li class=\"list-item\">Boil some water and let sit for 1-2 minutes</li>\r\n                    <li class=\"list-item\">Put the coffee grounds into a cafetiere and pour the water</li>\r\n                    <li class=\"list-item\"></li>\r\n                    <li class=\"list-item\"></li>\r\n                    <li class=\"list-item\"></li>\r\n                    <li class=\"list-item\"></li>\r\n                </ol>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n    <div class=\"absolute left-1/2 -translate-x-2/3 top-16 box-content bg-white p-3\">\r\n        <div class=\"flex items-center\">\r\n            <svg class=\"w-4 h-4 text-yellow-300 me-1\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"currentColor\" viewBox=\"0 0 22 20\">\r\n                <path d=\"M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z\"/>\r\n            </svg>\r\n            <svg class=\"w-4 h-4 text-yellow-300 me-1\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"currentColor\" viewBox=\"0 0 22 20\">\r\n                <path d=\"M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z\"/>\r\n            </svg>\r\n            <svg class=\"w-4 h-4 text-yellow-300 me-1\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"currentColor\" viewBox=\"0 0 22 20\">\r\n                <path d=\"M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z\"/>\r\n            </svg>\r\n            <svg class=\"w-4 h-4 text-yellow-300 me-1\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"currentColor\" viewBox=\"0 0 22 20\">\r\n                <path d=\"M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z\"/>\r\n            </svg>\r\n            <svg class=\"w-4 h-4 text-gray-300 me-1 dark:text-gray-500\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"currentColor\" viewBox=\"0 0 22 20\">\r\n                <path d=\"M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z\"/>\r\n            </svg>\r\n            <p class=\"ms-1 text-xs font-medium text-gray-500 dark:text-gray-400\">&nbsp;(365)</p>\r\n        </div>\r\n        <div class=\"font-bold text-6xl\">\r\n\r\n            Sweet iced Coffee with <br> Coconut Milk\r\n        </div>\r\n    </div>\r\n</div>"
+        },
+        {
+            "name": "SignUpComponent",
+            "id": "component-SignUpComponent-0441d4a42c6ad411e3d4e6d13c69f3c8061a03a6943c4920f946894a1974b62fd71a68b1dbb8836d1a75dcefc4159299a85f06a1008fa71db3eb94756f5cef51",
+            "file": "src/app/sign-up/sign-up.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-sign-up",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./sign-up.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "accountForm",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FormGroup",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "isPassVisible",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "signUpWithEmail",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onSubmit",
+                    "args": [
+                        {
+                            "name": "e",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "e",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-sign-up',\r\n  templateUrl: './sign-up.component.html',\r\n  styleUrl: './sign-up.component.scss'\r\n})\r\nexport class SignUpComponent {\r\n  signUpWithEmail: boolean = false;\r\n  isPassVisible: boolean = false;\r\n  accountForm: FormGroup;\r\n  \r\n  constructor(\r\n    private fb : FormBuilder\r\n  ) {\r\n    this.accountForm = this.fb.group({\r\n      name:['',Validators.required],\r\n      email:['',Validators.required, Validators.email],\r\n      pass:['',Validators.required, Validators.minLength(6)],\r\n    })\r\n  }\r\n\r\n  onSubmit(e:Event){\r\n    e.preventDefault();\r\n    console.log(this.accountForm.status)\r\n  }\r\n\r\n}\r\n",
+            "styleUrl": "./sign-up.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "fb",
+                        "type": "FormBuilder",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 12,
+                "jsdoctags": [
+                    {
+                        "name": "fb",
+                        "type": "FormBuilder",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "templateData": "<form [formGroup]=\"accountForm\" (ngSubmit)=\"onSubmit($event)\"  class=\" transition-all w-[22rem] flex flex-col gap-6 rounded-xl absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 shadow-lg py-6 bg-white px-3 shadow-gray-400 text-center m-auto font-sans\">\r\n    <div class=\"flex flex-col gap-2 sign-up--header\">\r\n        <h1 class=\"text-xl font-semibold\">\r\n            Sign Up\r\n        </h1>\r\n        <p class=\"text-sm\">\r\n            Join us now! Sign up to kick-start your journey.\r\n        </p>\r\n    </div>\r\n    <div *ngIf=\"signUpWithEmail\" class=\"flex flex-col gap-4\">\r\n        \r\n        <div class=\"form-input\"><input id=\"name\" type=\"text\" name=\"name\" class=\"peer\" formControlName=\"name\" ><label for=\"name\">Name</label></div>\r\n        <div class=\"form-input\"><input id=\"email\"type=\"text\" name=\"email\" class=\"peer\" formControlName=\"email\" ><label for=\"email\">Email</label></div>\r\n        <div class=\"form-input\">\r\n            <input id=\"password\" [type]=\"isPassVisible?'text':'password'\" name=\"password\" class=\"peer\" formControlName=\"pass\">\r\n            <label for=\"password\">Password</label>\r\n            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 576 512\" class=\"h-3 fill-gray-400 absolute right-2 top-1/2 -translate-y-1/2 cursor-pointer\" (click)=\"isPassVisible=!isPassVisible\">\r\n                <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d=\"M288 80c-65.2 0-118.8 29.6-159.9 67.7C89.6 183.5 63 226 49.4 256c13.6 30 40.2 72.5 78.6 108.3C169.2 402.4 222.8 432 288 432s118.8-29.6 159.9-67.7C486.4 328.5 513 286 526.6 256c-13.6-30-40.2-72.5-78.6-108.3C406.8 109.6 353.2 80 288 80zM95.4 112.6C142.5 68.8 207.2 32 288 32s145.5 36.8 192.6 80.6c46.8 43.5 78.1 95.4 93 131.1c3.3 7.9 3.3 16.7 0 24.6c-14.9 35.7-46.2 87.7-93 131.1C433.5 443.2 368.8 480 288 480s-145.5-36.8-192.6-80.6C48.6 356 17.3 304 2.5 268.3c-3.3-7.9-3.3-16.7 0-24.6C17.3 208 48.6 156 95.4 112.6zM288 336c44.2 0 80-35.8 80-80s-35.8-80-80-80c-.7 0-1.3 0-2 0c1.3 5.1 2 10.5 2 16c0 35.3-28.7 64-64 64c-5.5 0-10.9-.7-16-2c0 .7 0 1.3 0 2c0 44.2 35.8 80 80 80zm0-208a128 128 0 1 1 0 256 128 128 0 1 1 0-256z\"/>\r\n            </svg>\r\n        </div>\r\n        \r\n    </div>\r\n    <div class=\"sign-up--button-container flex flex-col gap-4\">\r\n        <button *ngIf=\"!signUpWithEmail\" type=\"button\" class=\"hover:ring-1 ring-blue-500 transition-all border-gray-300\">\r\n            <svg xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\" viewBox=\"0 0 48 48\">\r\n                <path fill=\"#FFC107\" d=\"M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z\"></path><path fill=\"#FF3D00\" d=\"M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z\"></path><path fill=\"#4CAF50\" d=\"M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z\"></path><path fill=\"#1976D2\" d=\"M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z\"></path>\r\n            </svg>\r\n            Sign up with Google\r\n        </button>\r\n        <button *ngIf=\"!signUpWithEmail\" type=\"button\" class=\"bg-slate-800 text-white fill-white shadow-md  hover:bg-slate-700 hover:ring-1 ring-blue-500 transition-all\" (click)=\"signUpWithEmail=!signUpWithEmail\">\r\n            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\r\n                <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d=\"M64 112c-8.8 0-16 7.2-16 16l0 22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1l0-22.1c0-8.8-7.2-16-16-16L64 112zM48 212.2L48 384c0 8.8 7.2 16 16 16l384 0c8.8 0 16-7.2 16-16l0-171.8L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64l384 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64L64 448c-35.3 0-64-28.7-64-64L0 128z\"/>\r\n            </svg>\r\n            Sign up with Email\r\n        </button>\r\n        <button *ngIf=\"signUpWithEmail\" type=\"submit\" class=\"bg-slate-800 text-white fill-white shadow-md  hover:bg-slate-700 hover:ring-1 ring-blue-500 transition-all\" (click)=\"signUpWithEmail=!signUpWithEmail\">\r\n            Sign up\r\n        </button>\r\n        <div class=\"text-sm font-normal \">Already have an account? <a href=\"#\" class=\"text-blue-500 hover:text-blue-800 hover:underline transition-all font-medium\">Log In</a></div>\r\n        <div *ngIf=\"signUpWithEmail\" class=\"flex flex-col gap-8\">\r\n            <div class=\"w-full relative\">\r\n                <hr>\r\n                <div class=\"absolute text-gray-500 text-sm bg-white p-1 left-1/2 top-0 -translate-x-1/2 -translate-y-1/2\">\r\n                    or\r\n                </div>\r\n            </div>\r\n            <button  type=\"button\" class=\"hover:ring-1 ring-blue-500 transition-all border-gray-300\">\r\n                <svg xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\" viewBox=\"0 0 48 48\">\r\n                    <path fill=\"#FFC107\" d=\"M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z\"></path><path fill=\"#FF3D00\" d=\"M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z\"></path><path fill=\"#4CAF50\" d=\"M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z\"></path><path fill=\"#1976D2\" d=\"M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z\"></path>\r\n                </svg>\r\n                Sign up with Google\r\n            </button>\r\n        </div>\r\n    </div>\r\n</form>\r\n"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-f19dcdeb5d4acdf974e9ef53f80c6abb8436e9f0f53399ea21b1982c5ba230f6f2e5191897226d2e6a4caa9558373102ddca0be13c16e7f3a6307e3d941a95c0",
+            "id": "module-AppModule-16e4cc671c79c61eec41f9fe8f6e64dcc584b364f7fe772b76a7e8c19cfdcb8a3c06224eef7ac69be628df34ee9625e12bad29038d0f7fb8da84f50d5e6e9af6",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport {FormsModule, ReactiveFormsModule} from '@angular/forms'\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { ProfileCardComponent } from './profile-card/profile-card.component';\r\nimport { AddToBagComponent } from './add-to-bag/add-to-bag.component';\r\nimport { MobileNavigationComponent } from './mobile-navigation/mobile-navigation.component';\r\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\r\nimport { ProfilePageComponent } from './mobile-navigation/profile-page/profile-page.component';\r\nimport { NoPageComponent } from './mobile-navigation/no-page/no-page.component';\r\nimport { RouterOutlet } from '@angular/router';\r\nimport { ContactUsComponent } from './contact-us/contact-us.component';\r\nimport { RecipeComponent } from './recipe/recipe.component';\r\nimport { CarouselComponent } from './carousel/carousel.component';\r\nimport { CreateAccountComponent } from './create-account/create-account.component';\r\nimport { MusicEventsComponent } from './music-events/music-events.component';\r\nimport { EventCardComponent } from './music-events/event-card/event-card.component';\r\nimport { PasswordGeneratorComponent } from './password-generator/password-generator.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    ProfileCardComponent,\r\n    AddToBagComponent,\r\n    MobileNavigationComponent,\r\n    ProfilePageComponent,\r\n    NoPageComponent,\r\n    ContactUsComponent,\r\n    RecipeComponent,\r\n    CarouselComponent,\r\n    CreateAccountComponent,\r\n    MusicEventsComponent,\r\n    EventCardComponent,\r\n    PasswordGeneratorComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    RouterOutlet,\r\n    FontAwesomeModule,\r\n    ReactiveFormsModule,\r\n    FormsModule,\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport {FormsModule, ReactiveFormsModule} from '@angular/forms'\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { ProfileCardComponent } from './profile-card/profile-card.component';\r\nimport { AddToBagComponent } from './add-to-bag/add-to-bag.component';\r\nimport { MobileNavigationComponent } from './mobile-navigation/mobile-navigation.component';\r\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\r\nimport { ProfilePageComponent } from './mobile-navigation/profile-page/profile-page.component';\r\nimport { NoPageComponent } from './mobile-navigation/no-page/no-page.component';\r\nimport { RouterOutlet } from '@angular/router';\r\nimport { ContactUsComponent } from './contact-us/contact-us.component';\r\nimport { RecipeComponent } from './recipe/recipe.component';\r\nimport { CarouselComponent } from './carousel/carousel.component';\r\nimport { CreateAccountComponent } from './create-account/create-account.component';\r\nimport { MusicEventsComponent } from './music-events/music-events.component';\r\nimport { EventCardComponent } from './music-events/event-card/event-card.component';\r\nimport { PasswordGeneratorComponent } from './password-generator/password-generator.component';\r\nimport { SignUpComponent } from './sign-up/sign-up.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    ProfileCardComponent,\r\n    AddToBagComponent,\r\n    MobileNavigationComponent,\r\n    ProfilePageComponent,\r\n    NoPageComponent,\r\n    ContactUsComponent,\r\n    RecipeComponent,\r\n    CarouselComponent,\r\n    CreateAccountComponent,\r\n    MusicEventsComponent,\r\n    EventCardComponent,\r\n    PasswordGeneratorComponent,\r\n    SignUpComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    RouterOutlet,\r\n    FontAwesomeModule,\r\n    ReactiveFormsModule,\r\n    FormsModule,\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1320,6 +1560,9 @@
                         },
                         {
                             "name": "RecipeComponent"
+                        },
+                        {
+                            "name": "SignUpComponent"
                         }
                     ]
                 },
@@ -1513,7 +1756,7 @@
                 "linktype": "component",
                 "name": "PasswordGeneratorComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/15",
                 "status": "low"
             },
             {
@@ -1532,6 +1775,15 @@
                 "name": "RecipeComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/sign-up/sign-up.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SignUpComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
                 "status": "low"
             }
         ]
