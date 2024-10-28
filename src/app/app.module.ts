@@ -19,6 +19,8 @@ import { MusicEventsComponent } from './music-events/music-events.component';
 import { EventCardComponent } from './music-events/event-card/event-card.component';
 import { PasswordGeneratorComponent } from './password-generator/password-generator.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { HotelBookingComponent } from './hotel-booking/hotel-booking.component';
+import { CalendarInputComponent } from './hotel-booking/calendar-input/calendar-input.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     MusicEventsComponent,
     EventCardComponent,
     PasswordGeneratorComponent,
-    SignUpComponent
+    SignUpComponent,
+    HotelBookingComponent,
+    CalendarInputComponent
   ],
   imports: [
     BrowserModule,
